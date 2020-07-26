@@ -1,0 +1,104 @@
+﻿@model IEnumerable<hrithvika.Models.Custom_GalleryEvents>
+
+@{
+    ViewBag.Title = "EventDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/jquery.jqzoom.css" rel="stylesheet" />
+<script src="~/Content/js/jquery.js"></script>
+<script src="~/Content/js/jquery.jqzoom-core.js"></script>
+
+<style>
+    .dv {
+        min-height: 400px;
+    }
+
+    .table a {
+        color: #808080 !important
+    }
+
+    h1 {
+        font-family: cardtitle !important;
+        text-transform: uppercase;
+    }
+
+        h1 a {
+            padding-top: 50px !important;
+            font-family: customfont !important;
+            font-size: 18px;
+            color: #001722 !important
+        }
+
+            h1 a:hover {
+                padding-top: 50px !important;
+                font-family: customfont !important;
+                font-size: 18px;
+                color: #001722 !important;
+                border-bottom: 1px solid #808080
+            }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" style="filter:grayscale(100%)" src="~/Images/events.jpg" />
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+           HOW EVER WE ARE
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />
+           
+            <br />
+             
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("Enroll", "Create", "People", null)</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="col-md-12 text-center">
+        <br />
+        <h1 class="text-center">
+            @ViewBag.EventTile &nbsp;&nbsp;&nbsp;  <i class="fa fa-picture-o"> @Html.ActionLink("Images", "EventDetails", new { eventID = @ViewBag.eventid })</i> 
+            <i class="fa fa-video-camera"> @Html.ActionLink("Videos", "EventVideos", new { eventID = @ViewBag.eventid })</i>
+        </h1>
+
+        <br />
+    </div>
+</div>
+<div class="container-fluid dv">
+    <div class="container-fluid">
+        <div class="col-md-12 text-center">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 padding_col" data-aos="fade-right">
+                        <div class="background_white">
+                            <iframe width="100%" height="270" src="@item.image_url" allowfullscreen="allowfullscreen"
+                                    mozallowfullscreen="mozallowfullscreen"
+                                    msallowfullscreen="msallowfullscreen"
+                                    oallowfullscreen="oallowfullscreen"
+                                    webkitallowfullscreen="webkitallowfullscreen"></iframe>
+                        </div>
+                    </div>
+                    <br />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<br /> <br />
+

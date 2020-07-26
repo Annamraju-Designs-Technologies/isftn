@@ -1,0 +1,139 @@
+﻿@model IEnumerable<hrithvika.Models.Custom_Nomination>
+@{
+    ViewBag.Title = "Nominationtype";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .bgdiv h5 {
+        font-family: 'customfontbold';
+        opacity: 0.7
+    }
+
+    body {
+        background: #f7f7f7
+    }
+
+    .right {
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" src="~/Images/Nominationsbanner.jpg" />
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+            HOW EVER WE ARE
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />
+
+            <br />
+
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("Enroll", "Create", "People")</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 padding">
+            <h1 class="text-center" style="font-family:cardtitle!important">
+                Patriotic Short Film Contest
+            </h1>
+            <br />
+            <p>
+                Istandforthenation proudly presents "Patriotic Short Film Contest" which aims to reward and recognize the talent of those people who can showcast how much the armed forces mean to you; their stories – well known or untold. Our brave hearts, who think nothing while sacrificing their lives to protect our country and keep us safe.
+            </p>
+            <br />
+            @Html.ActionLink("Click here to participate.", "Create_Nominations", "People", null, new { @class = "btn btn-primary loginbtn" })
+            <br />
+            <br />
+            <h4>Terms</h4>
+            <p>Theme : Patriotic</p>
+            <p>Eligibility :</p>
+            <ul>
+
+                <li>
+                    The film should be made by a person of Indian origin OR the film should be based on India.
+                </li>
+                <li>
+                    Duration of the video must not be more than 20 minutes.
+                </li>
+            </ul>
+            <p>Prizes: </p>
+            <ul>
+                <li>
+                    The top 3 winning films from each category will receive exciting prizes worth Rs. 1,00,000 for the winner, Rs 50000 as 2nd Prize and 3 consolation prizes worth Rs 25000.
+                </li>
+                <li>
+                    The top 3 winning films from each category will also get a certificate and a trophy.
+                </li>
+            </ul>
+            <p>Application Deadline: Jan 15th 2020</p>
+            <br />
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid background_about_fourth">
+    <div class="row aa">
+        <div class="col-md-12">
+            <div class="paddingnomination">
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="background_white">
+    <div class="container">
+        <br />
+        <h1 style="font-family:cardtitle!important"><a class="team_ad" href="/Nominations/Index/">Nominations</a></h1>
+        <br />
+        <div class="row">
+            <div class="col-md-12 text-center white">
+
+                @Html.ActionLink("School", "Nominationtype", "Nominations", new { type = "School" }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("College", "Nominationtype", "Nominations", new { type = "College" }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Open", "Nominationtype", "Nominations", new { type = "Open" }, new { @class = "btn btn-primary" })
+                <br />
+                <br />
+                <br />
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 text-center">
+                    <h3 style="text-transform:capitalize">@item.title</h3>
+                    <div style="min-height:250px!important;overflow-y:hidden">
+                        <a href="/Nominations/Nominationdetails?eventID=@item.id">
+                            <img class="img-thumbnail"
+                                 src="@item.display_image"
+                                 alt="@item.display_image" width="100%" title="@item.title" style="min-height:230px!important;" />
+                        </a>
+                    </div>
+                    @Html.ActionLink("Know more", "Nominationdetails", new { eventID = item.id }, null)
+                    <br />
+                    <br /> <br />
+                </div>
+
+
+                <br />
+            }
+
+        </div>
+
+    </div>
+</div>

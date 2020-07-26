@@ -1,0 +1,247 @@
+﻿@model IEnumerable<hrithvika.Models.Custom_Nomination>
+
+@{
+    ViewBag.Title = "Nominations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" style="filter:grayscale(100%)" src="~/Images/events.jpg" />
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+            HOW EVER WE ARE
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />
+
+            <br />
+
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("ENROLL", "Create", "People", null)</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid dv">
+    <h1>List of NGO's</h1>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <table class="table">
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Display Picture
+                    </th>
+                    <th>
+                        Video
+                    </th>
+
+                    <th></th>
+
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.title)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                        <td>
+                            <img src="@item.display_image" width="60" alt="@item.display_image" />
+                        </td>
+                        <td>
+                            <iframe width="80" height="60" src="@item.video" allowfullscreen="allowfullscreen"
+                                    mozallowfullscreen="mozallowfullscreen"
+                                    msallowfullscreen="msallowfullscreen"
+                                    oallowfullscreen="oallowfullscreen"
+                                    webkitallowfullscreen="webkitallowfullscreen"></iframe>
+                        </td>
+                        <td>
+                            <i class="fa fa-trash"></i><button type="submit" id="@item.id" class="smallicon delete edit">Delete</button>
+                        </td>
+                        @if (item.isactive != 1)
+                        {
+                            <td>
+                                <button type="submit" id="@item.id" class=" Activate btn btn-success ">Activate</button>
+                            </td>
+                        }
+                        
+
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+<link href="~/Content/sweetalert/sweet-alert.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/sweet-alert.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.Activate').on('click', function (e, data) {
+            if (!data) {
+                handleActivate(e, 1);
+            } else {
+                window.location = $(this).attr('href');
+            }
+        });
+    });
+    function handleActivate(e, stop) {
+        if (stop) {
+            e.preventDefault();
+            swal({
+                title: "Are you sure?",
+                text: "Details view to all!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, Activate!",
+                closeOnConfirm: false
+            },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        var element = e.target.id;
+                        $.ajax({
+                            url: "/Admin/NominationActivate",
+                            type: "POST",
+                            data: JSON.stringify({ 'ID': element }),
+                            dataType: "json",
+                            traditional: true,
+                            contentType: "application/json; charset=utf-8",
+                            success: function (data) {
+                                var url = window.location.href;
+                                if (url.indexOf('?') > -1) {
+                                    url += '&param=1'
+                                } else {
+                                    url += '?param=1'
+                                }
+                                window.location.href = url;
+                            }
+
+                        });
+                    }
+                });
+        }
+    };
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.delete').on('click', function (e, data) {
+            debugger
+            if (!data) {
+                handleDelete(e, 1);
+            } else {
+                window.location = $(this).attr('href');
+            }
+        });
+    });
+    function handleDelete(e, stop) {
+        if (stop) {
+            e.preventDefault();
+            swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover the data again!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete!",
+                closeOnConfirm: false
+            },
+            function (isConfirm) {
+                if (isConfirm) {
+                    var element = e.target.id;
+                    $.ajax({
+                        url: "/AdminFranchiser/Delete",
+                        type: "POST",
+                        data: JSON.stringify({ 'ID': element }),
+                        dataType: "json",
+                        traditional: true,
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            var url = window.location.href;
+                            if (url.indexOf('?') > -1) {
+                                url += '&param=1'
+                            } else {
+                                url += '?param=1'
+                            }
+                            window.location.href = url;
+                        }
+
+                    });
+                }
+            });
+        }
+    };
+         $(document).ready(function () {
+        $('.delete').on('click', function (e, data) {
+            debugger
+            if (!data) {
+                handleDelete(e, 1);
+            } else {
+                window.location = $(this).attr('href');
+            }
+        });
+    });
+    function handleDelete(e, stop) {
+        if (stop) {
+            e.preventDefault();
+            swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover the data again!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete!",
+                closeOnConfirm: false
+            },
+            function (isConfirm) {
+                if (isConfirm) {
+                    var element = e.target.id;
+                    $.ajax({
+                        url: "/Admin/NominationDelete",
+                        type: "POST",
+                        data: JSON.stringify({ 'ID': element }),
+                        dataType: "json",
+                        traditional: true,
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            var url = window.location.href;
+                            if (url.indexOf('?') > -1) {
+                                url += '&param=1'
+                            } else {
+                                url += '?param=1'
+                            }
+                            window.location.href = url;
+                        }
+
+                    });
+                }
+            });
+        }
+    };
+</script>

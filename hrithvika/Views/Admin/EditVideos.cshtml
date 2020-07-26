@@ -1,0 +1,80 @@
+﻿
+<style>
+    .dv {
+        min-height: 400px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" style="filter:grayscale(100%)" src="~/Images/events.jpg" />
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+           FOR OUR BRAVE HEARTS
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />
+           
+            <br />
+             
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("ENROLL", "Create", "People", null)</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@model hrithvika.Models.custom_Gallery
+
+@{
+    ViewBag.Title = "editImage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid dv text-center">
+    <h1>Edit Video</h1>
+    <br />
+    <br />
+    @using (Html.BeginForm("editConfirmVideo", "Admin", "Post"))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.id)
+
+           
+            <br />
+            <div class="checkbox">
+                Is Important
+                @Html.CheckBoxFor(model => model.isimportant)
+
+            </div>
+
+        </div>
+
+        <br />
+        <br />
+        <input type="submit" value="Update" class="btn btn-primary" />
+
+
+
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+</div>

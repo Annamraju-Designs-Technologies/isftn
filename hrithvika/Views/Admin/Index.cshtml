@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .dv {
+        min-height: 400px;
+    }
+    .btnwidth{
+        width:200px;
+        margin-top:10px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" style="filter:grayscale(100%)" src="~/Images/events.jpg" />
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+            HOW EVER WE ARE
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />
+
+            <br />
+
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("ENROLL", "Create", "People", null)</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container dv">
+    <div class="row">
+        <div class="col-md-12 text-center">
+
+            <br />        <br />
+            <h1>Dashboard</h1>
+            <br />        <br />
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.ActionLink("Get Subscribers List", "ListofSubscribers", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ActionLink("Manage Event", "EventsList", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ActionLink("Video Gallery", "Listofvideos", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.ActionLink("Manage team", "TeamList", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ActionLink("Image Gallery", "ListofMainGallery", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ActionLink("NGO's List", "ListOFNGOS", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.ActionLink("Yuvanirman List", "yuvanirman", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ActionLink("Pre Registration", "preyava", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ActionLink("Nominations List", "Nominations", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.ActionLink("Donitions List", "Donationlist", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ActionLink("Public Voice List", "publicvoice", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+                <div class="col-md-4">
+                    @Html.ActionLink("Venue List", "venue", null, new { @class = "btn btn-primary btnwidth" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+   
+    <div class="row">
+        <div class="col-md-12 text-center">
+
+
+           
+           
+
+        </div>
+    </div>
+    <br />
+</div>
+
+   
+

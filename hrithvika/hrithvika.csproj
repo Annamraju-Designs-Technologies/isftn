@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{025D6E0D-3091-4FDD-926A-4AF2965EA670}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>hrithvika</RootNamespace>
+    <AssemblyName>hrithvika</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.94.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.94.2\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.3.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.3\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.1.3.0\lib\net45\FastMember.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="InstamojoAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\InstamojoAPI.dll.1.0.1\lib\InstamojoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.10.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.10.9\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector, Version=0.61.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.0.61.0\lib\net461\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.0\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.6\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.6\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DonationsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KalamYuvanirmanController.cs" />
+    <Compile Include="Controllers\NominationsController.cs" />
+    <Compile Include="Controllers\PeopleController.cs" />
+    <Compile Include="Controllers\PublicvoiceController.cs" />
+    <Compile Include="Controllers\VenueController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\admin.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\category.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\country.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Donation.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HrithvikaEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HrithvikaEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HrithvikaEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HrithvikaEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HrithvikaEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Hrithvik_NGO.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Hrithvik_preyuvanirman.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Hrithvik_yuvanirman.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HRTVIK_events.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HRTVIK_gallery.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HRTVIK_OGalery.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\HRTVIK_OurTeam.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Nomination.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Nomination_type.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Ogalerytype.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Person.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\publicvoice.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\state.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Team_type.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\venue.cs">
+      <DependentUpon>HrithvikaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Hash.aspx.cs">
+      <DependentUpon>Hash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hash.aspx.designer.cs">
+      <DependentUpon>Hash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\customNGO.cs" />
+    <Compile Include="Models\Custom_Donation.cs" />
+    <Compile Include="Models\Custom_Events.cs" />
+    <Compile Include="Models\custom_Gallery.cs" />
+    <Compile Include="Models\Custom_Nomination.cs" />
+    <Compile Include="Models\custom_nri.cs" />
+    <Compile Include="Models\Custom_People.cs" />
+    <Compile Include="Models\Custom_GalleryEvents.cs" />
+    <Compile Include="Models\Custom_preyuva.cs" />
+    <Compile Include="Models\Custom_public.cs" />
+    <Compile Include="Models\custom_Team.cs" />
+    <Compile Include="Models\Custom_venue.cs" />
+    <Compile Include="Models\custom_yuvanirman.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\payment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Response.aspx.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Response.aspx.designer.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\compiled\flipclock.css" />
+    <Content Include="Content\compiled\flipclock.js" />
+    <Content Include="Content\compiled\flipclock.min.js" />
+    <Content Include="Content\demo_table.css" />
+    <Content Include="Content\jquery.jqzoom.css" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\classie.js" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\customgallery.js" />
+    <Content Include="Content\js\flipclock.min.js" />
+    <Content Include="Content\js\jquery.jqzoom-core-pack.js" />
+    <Content Include="Content\js\jquery.jqzoom-core.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jssor.slider-27.5.0.min.js" />
+    <Content Include="Content\js\modernizr.min.js" />
+    <Content Include="Content\js\owl.autoplay.js" />
+    <Content Include="Content\js\owl.carousel.js" />
+    <Content Include="Content\js\photostack.js" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="Content\sweetalert\bootstrap-sweetalert.png" />
+    <Content Include="Content\sweetalert\docs.css" />
+    <Content Include="Content\sweetalert\sweet-alert.css" />
+    <Content Include="Content\sweetalert\thumbs-up.jpg" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="dynamicPic\0_220357.png" />
+    <Content Include="dynamicPic\1 %281%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %281%29_741638.jpeg" />
+    <Content Include="dynamicPic\1 %281%29_81026.jpeg" />
+    <Content Include="dynamicPic\1 %2810%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %2810%29_741638.jpeg" />
+    <Content Include="dynamicPic\1 %2810%29_802979.jpeg" />
+    <Content Include="dynamicPic\1 %2811%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %2811%29_604492.jpeg" />
+    <Content Include="dynamicPic\1 %2811%29_741638.jpeg" />
+    <Content Include="dynamicPic\1 %2812%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %2812%29_741638.jpeg" />
+    <Content Include="dynamicPic\1 %2812%29_764810.jpeg" />
+    <Content Include="dynamicPic\1 %282%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %282%29_684052.jpeg" />
+    <Content Include="dynamicPic\1 %282%29_741638.jpeg" />
+    <Content Include="dynamicPic\1 %283%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %283%29_39556.jpeg" />
+    <Content Include="dynamicPic\1 %283%29_741638.jpeg" />
+    <Content Include="dynamicPic\1 %284%29_199874.jpeg" />
+    <Content Include="dynamicPic\1 %284%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %284%29_741638.jpeg" />
+    <Content Include="dynamicPic\1 %285%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %285%29_360192.jpeg" />
+    <Content Include="dynamicPic\1 %285%29_741638.jpeg" />
+    <Content Include="dynamicPic\1 %286%29_161706.jpeg" />
+    <Content Include="dynamicPic\1 %286%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %286%29_741638.jpeg" />
+    <Content Include="dynamicPic\1 %287%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %287%29_322024.jpeg" />
+    <Content Include="dynamicPic\1 %287%29_741638.jpeg" />
+    <Content Include="dynamicPic\1 %288%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %288%29_482342.jpeg" />
+    <Content Include="dynamicPic\1 %288%29_741638.jpeg" />
+    <Content Include="dynamicPic\1 %289%29_213322.jpeg" />
+    <Content Include="dynamicPic\1 %289%29_642660.jpeg" />
+    <Content Include="dynamicPic\1 %289%29_741638.jpeg" />
+    <Content Include="dynamicPic\20191019_125458_639375_121074.jpg" />
+    <Content Include="dynamicPic\5F9E2874-928A-495F-B8E6-3374D280B9D7_774938_505268.jpeg" />
+    <Content Include="dynamicPic\aarna logo-02_143649.jpg" />
+    <Content Include="dynamicPic\adtech.jpg" />
+    <Content Include="dynamicPic\adtech_911189.jpg" />
+    <Content Include="dynamicPic\asaya logo isfn_106408.jpg" />
+    <Content Include="dynamicPic\AVM logo.jpg" />
+    <Content Include="dynamicPic\AVM logo_514224.jpg" />
+    <Content Include="dynamicPic\background_423701.jpg" />
+    <Content Include="dynamicPic\bakery shop_699141.jpg" />
+    <Content Include="dynamicPic\black logo_0.jpg" />
+    <Content Include="dynamicPic\black logo_123670.jpg" />
+    <Content Include="dynamicPic\black logo_313808.jpg" />
+    <Content Include="dynamicPic\black logo_367902.jpg" />
+    <Content Include="dynamicPic\black logo_412298.jpg" />
+    <Content Include="dynamicPic\black logo_492387.jpg" />
+    <Content Include="dynamicPic\black logo_497926.jpg" />
+    <Content Include="dynamicPic\black logo_510711.jpg" />
+    <Content Include="dynamicPic\black logo_771142.jpg" />
+    <Content Include="dynamicPic\bnk-01.jpg" />
+    <Content Include="dynamicPic\bnk-01_734096.jpg" />
+    <Content Include="dynamicPic\Curd_699141.jpg" />
+    <Content Include="dynamicPic\Curd_938827.jpg" />
+    <Content Include="dynamicPic\dattanna_17937_542574.jpg" />
+    <Content Include="dynamicPic\dattanna_17937_542574_722.jpg" />
+    <Content Include="dynamicPic\DumMatka Logo.jpg" />
+    <Content Include="dynamicPic\DumMatka Logo_889110.jpg" />
+    <Content Include="dynamicPic\franchiser shop_53447.jpg" />
+    <Content Include="dynamicPic\franchiser shop_723076.jpg" />
+    <Content Include="dynamicPic\franchiser shop_927216.jpg" />
+    <Content Include="dynamicPic\fruits shops_53447.jpg" />
+    <Content Include="dynamicPic\fruits shops_699141.jpg" />
+    <Content Include="dynamicPic\Icon_142647.jpg" />
+    <Content Include="dynamicPic\image_976183.JPG" />
+    <Content Include="dynamicPic\image_976183_630.JPG" />
+    <Content Include="dynamicPic\jaidev_650791_664724.jpg" />
+    <Content Include="dynamicPic\jaidev_650791_664724_578.jpg" />
+    <Content Include="dynamicPic\Logo New.jpg" />
+    <Content Include="dynamicPic\Logo New_353440.jpg" />
+    <Content Include="dynamicPic\Logo_393490.jpg" />
+    <Content Include="dynamicPic\lp_155442.png" />
+    <Content Include="dynamicPic\lp_699141.png" />
+    <Content Include="dynamicPic\MARPU-logo ISFN_10325.png" />
+    <Content Include="dynamicPic\MARPU-logo ISFN_253779.png" />
+    <Content Include="dynamicPic\MARPU-logo ISFN_417326.png" />
+    <Content Include="dynamicPic\MARPU-logo ISFN_429119.png" />
+    <Content Include="dynamicPic\MARPU-logo ISFN_458325.png" />
+    <Content Include="dynamicPic\MARPU-logo ISFN_617132.png" />
+    <Content Include="dynamicPic\MARPU-logo ISFN_678463.png" />
+    <Content Include="dynamicPic\meghalaya_678249.jpg" />
+    <Content Include="dynamicPic\MIDLAND LOGO.jpg" />
+    <Content Include="dynamicPic\MIDLAND LOGO_669444.jpg" />
+    <Content Include="dynamicPic\milk_53447.png" />
+    <Content Include="dynamicPic\milk_699141.jpg" />
+    <Content Include="dynamicPic\mindify1.jpg" />
+    <Content Include="dynamicPic\mindify2.jpg" />
+    <Content Include="dynamicPic\newspaper_49476.jpg" />
+    <Content Include="dynamicPic\newspaper_53447.jpg" />
+    <Content Include="dynamicPic\newspaper_699141.jpg" />
+    <Content Include="dynamicPic\new_635863.jpg" />
+    <Content Include="dynamicPic\NRI logo.jpg" />
+    <Content Include="dynamicPic\NRI logo_393731.jpg" />
+    <Content Include="dynamicPic\Photo Exposure Logo-01_137287.jpg" />
+    <Content Include="dynamicPic\photofina-01.jpg" />
+    <Content Include="dynamicPic\photofina-01_709499.jpg" />
+    <Content Include="dynamicPic\rammadhav_559087_792879.jpg" />
+    <Content Include="dynamicPic\rammadhav_559087_792879_218942.jpg" />
+    <Content Include="dynamicPic\Round Logo-01_866278.jpg" />
+    <Content Include="dynamicPic\SEWA Logo_488565_323081.png" />
+    <Content Include="dynamicPic\slide4_423701.jpg" />
+    <Content Include="dynamicPic\SMILING SENSES LOGO_FINAL.jpg" />
+    <Content Include="dynamicPic\SWI - Very Final LOGO - high resolution.jpg" />
+    <Content Include="dynamicPic\SWI - Very Final LOGO - high resolution_231085.png" />
+    <Content Include="dynamicPic\Tenx.jpg" />
+    <Content Include="dynamicPic\TPPWS-001_175902_902683.jpg" />
+    <Content Include="dynamicPic\v3 logo png.jpg" />
+    <Content Include="dynamicPic\v3 logo png_846998.jpg" />
+    <Content Include="dynamicPic\Vashista-%2822%29_265336.png" />
+    <Content Include="dynamicPic\vegetables shop_53447.jpg" />
+    <Content Include="dynamicPic\VIZAG Car Bazar.jpg" />
+    <Content Include="dynamicPic\VIZAG Car Bazar_391197.jpg" />
+    <Content Include="dynamicPic\weave-logo-png.jpg" />
+    <Content Include="dynamicPic\weave-logo-png_577323.png" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-23 at 8.38.47 AM_996727.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-26 at 3.02.12 PM_272746.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-26 at 3.02.12 PM_474243.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-26 at 3.02.13 PM %281%29_171370.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-26 at 3.02.13 PM %281%29_940948.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-26 at 3.02.13 PM %282%29_174302.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-26 at 3.02.13 PM %282%29_937938.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-26 at 3.02.13 PM_707595.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-26 at 3.02.13 PM_707595_425275.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-26 at 3.02.13 PM_707595_754711.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.45.50 PM_500842.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.45.53 PM %281%29_407655.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.45.53 PM %281%29_407655_725215.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.45.53 PM_343826.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.45.56 PM %281%29_672942.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.45.56 PM %281%29_804628.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.45.56 PM %281%29_804628_882231.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.45.56 PM %281%29_804628_882231_243586.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.45.56 PM_186810.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.45.58 PM_677435.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.46.00 PM %281%29_37982.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.46.00 PM %281%29_37982_844063.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.46.01 PM %281%29_312727.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-09-28 at 5.46.01 PM %281%29_662074.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-10-19 at 12.56.38 PM_568423.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-10-19 at 12.56.39 PM_623985.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-10-19 at 12.56.40 PM_366634.jpeg" />
+    <Content Include="dynamicPic\WhatsApp Image 2019-10-28 at 1.42.17 PM_175141_894482.jpeg" />
+    <Content Include="dynamicPic\yuvanirman_746670.jpg" />
+    <Content Include="Entities\HrithvikaEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HrithvikaEntity.edmx</DependentUpon>
+      <LastGenOutput>HrithvikaEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\HrithvikaEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HrithvikaEntity.edmx</DependentUpon>
+      <LastGenOutput>HrithvikaEntity.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Hash.aspx" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\1.png" />
+    <Content Include="Images\10.png" />
+    <Content Include="Images\11.jpg" />
+    <Content Include="Images\11.png" />
+    <Content Include="Images\12345.png" />
+    <Content Include="Images\3.png" />
+    <Content Include="Images\banner.jpg" />
+    <Content Include="Images\banner2.jpg" />
+    <Content Include="Images\Bharathtodaylive.jpg" />
+    <Content Include="Images\br.jpg" />
+    <Content Include="Images\certificate.jpg" />
+    <Content Include="Images\donation.jpg" />
+    <Content Include="Images\gallery\ekam.png" />
+    <Content Include="Images\hrithvikImages\Banner.jpg" />
+    <Content Include="Images\isfntel.jpg" />
+    <Content Include="Images\isfteng.jpg" />
+    <Content Include="Images\isftnlogo.jpg" />
+    <Content Include="Images\2.png" />
+    <Content Include="Images\3.jpg" />
+    <Content Include="Images\5.png" />
+    <Content Include="Images\6.jpg" />
+    <Content Include="Images\6.png" />
+    <Content Include="Images\7.png" />
+    <Content Include="Images\77.jpg" />
+    <Content Include="Images\9.png" />
+    <Content Include="Images\aasraalogo.png" />
+    <Content Include="Images\alkslakslaks.png" />
+    <Content Include="Images\asasasasas.gif" />
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\backgroundwall.jpg" />
+    <Content Include="Images\coverpic2.jpg" />
+    <Content Include="Images\crpf.png" />
+    <Content Include="Images\deskisfn.jpg" />
+    <Content Include="Images\deskisfn.png" />
+    <Content Include="Images\Editpoint-001-768x256.png" />
+    <Content Include="Images\editpoint.png" />
+    <Content Include="Images\events.jpg" />
+    <Content Include="Images\events.png" />
+    <Content Include="Images\footer.jpg" />
+    <Content Include="Images\footer_mobile.jpg" />
+    <Content Include="Images\gallery\1.png" />
+    <Content Include="Images\gallery\10.png" />
+    <Content Include="Images\gallery\11.jpg" />
+    <Content Include="Images\gallery\2.png" />
+    <Content Include="Images\gallery\3.jpg" />
+    <Content Include="Images\gallery\4.jpg" />
+    <Content Include="Images\gallery\5.png" />
+    <Content Include="Images\gallery\6.jpg" />
+    <Content Include="Images\gallery\7.png" />
+    <Content Include="Images\gallery\8.jpg" />
+    <Content Include="Images\gallery\9.png" />
+    <Content Include="Images\hrithvikImages\19.jpg" />
+    <Content Include="Images\hrithvikImages\20.jpg" />
+    <Content Include="Images\hrithvikImages\21.jpg" />
+    <Content Include="Images\hrithvikImages\22.jpg" />
+    <Content Include="Images\hrithvikImages\23.jpeg" />
+    <Content Include="Images\hrithvikImages\24.jpg" />
+    <Content Include="Images\hrithvikImages\25.jpg" />
+    <Content Include="Images\hrithvikImages\26.jpg" />
+    <Content Include="Images\hrithvikImages\27.jpg" />
+    <Content Include="Images\hrithvikImages\28.jpg" />
+    <Content Include="Images\hrithvikImages\29.jpg" />
+    <Content Include="Images\hrithvikImages\30.jpg" />
+    <Content Include="Images\hrithvikImages\1.jpeg" />
+    <Content Include="Images\hrithvikImages\10.jpg" />
+    <Content Include="Images\hrithvikImages\11.jpg" />
+    <Content Include="Images\hrithvikImages\12.jpg" />
+    <Content Include="Images\hrithvikImages\13.jpg" />
+    <Content Include="Images\hrithvikImages\14.jpg" />
+    <Content Include="Images\hrithvikImages\16.jpg" />
+    <Content Include="Images\hrithvikImages\17.jpg" />
+    <Content Include="Images\hrithvikImages\18.jpg" />
+    <Content Include="Images\hrithvikImages\2.jpg" />
+    <Content Include="Images\hrithvikImages\4.jpg" />
+    <Content Include="Images\hrithvikImages\5.jpg" />
+    <Content Include="Images\hrithvikImages\6.jpg" />
+    <Content Include="Images\hrithvikImages\7.jpg" />
+    <Content Include="Images\hrithvikImages\8.jpg" />
+    <Content Include="Images\hrithvikImages\9.jpg" />
+    <Content Include="Images\IFSN.jpg" />
+    <Content Include="Images\ifsn.png" />
+    <Content Include="Images\india.gif" />
+    <Content Include="Images\indian-army-message.jpg" />
+    <Content Include="Images\indianflag.jpg" />
+    <Content Include="Images\indiansoldier.jpg" />
+    <Content Include="Images\indiansoldiers.png" />
+    <Content Include="Images\isftn.jpg" />
+    <Content Include="Images\isftnfooter.jpg" />
+    <Content Include="Images\isftnfooter_mobile.jpg" />
+    <Content Include="Images\istandforthenation.png" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logoassra.png" />
+    <Content Include="Images\logo_normal.png" />
+    <Content Include="Images\makeinindia.png" />
+    <Content Include="Images\naminationbanner.jpg" />
+    <Content Include="Images\nbanner.jpg" />
+    <Content Include="Images\Nominationsbanner.jpg" />
+    <Content Include="Images\org.jpg" />
+    <Content Include="Images\org1.jpg" />
+    <Content Include="Images\org2.jpg" />
+    <Content Include="Images\org3.jpg" />
+    <Content Include="Images\org4.jpg" />
+    <Content Include="Images\org4.png" />
+    <Content Include="Images\organizers.jpg" />
+    <Content Include="Images\organizers_banner.jpg" />
+    <Content Include="Images\ourteam.jpg" />
+    <Content Include="Images\playbtn.png" />
+    <Content Include="Images\playbutton.jpg" />
+    <Content Include="Images\publicvoice.jpg" />
+    <Content Include="Images\salute.jpg" />
+    <Content Include="Images\salute.png" />
+    <Content Include="Images\salutepic2.jpg" />
+    <Content Include="Images\salutepic2mobile.jpg" />
+    <Content Include="Images\singforthenation.jpeg" />
+    <Content Include="Images\slide1.jpg" />
+    <Content Include="Images\slide2.jpg" />
+    <Content Include="Images\slide3.jpg" />
+    <Content Include="Images\slide4.jpg" />
+    <Content Include="Images\slide5.jpg" />
+    <Content Include="Images\Sliderimage.jpg" />
+    <Content Include="Images\socialmedia.jpg" />
+    <Content Include="Images\socialmediamobile.jpg" />
+    <Content Include="Images\soldier.jpg" />
+    <Content Include="Images\slide6.jpg" />
+    <Content Include="Images\Thawar-Chand-Gehlot_964 %281%29.jpg" />
+    <Content Include="Images\Thawar-Chand-Gehlot_964.jpg" />
+    <Content Include="Images\venue.jpg" />
+    <Content Include="Images\vid.png" />
+    <Content Include="Images\yuvanirman.jpg" />
+    <Content Include="Images\yuvanirmanbanner.jpeg" />
+    <Content Include="Pics\background.jpg" />
+    <Content Include="Pics\bb.jpg" />
+    <Content Include="Pics\Chakra.png" />
+    <Content Include="Pics\flag.png" />
+    <Content Include="Pics\header.png" />
+    <Content Include="Pics\standfordn.png" />
+    <Content Include="Response.aspx" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\sweetalert\sweet-alert-animations.less" />
+    <Content Include="Content\sweetalert\sweet-alert-combine.less" />
+    <Content Include="Content\sweetalert\sweet-alert.less" />
+    <Content Include="fonts\JosefinSans-Regular.ttf" />
+    <Content Include="fonts\CaviarDreams.ttf" />
+    <Content Include="fonts\CaviarDreams_Bold.ttf" />
+    <Content Include="fonts\Interstate Bold.ttf" />
+    <Content Include="fonts\OpenSans-Regular.ttf" />
+    <Content Include="fonts\OpenSans-Semibold.ttf" />
+    <Content Include="fonts\Lato-Light.ttf" />
+    <Content Include="fonts\Lato-Regular.ttf" />
+    <Content Include="fonts\Lato-Thin.ttf" />
+    <Content Include="fonts\NeutraText-Bold.otf" />
+    <Content Include="fonts\Lora-Regular.ttf" />
+    <Content Include="fonts\oswald.regular.ttf" />
+    <Content Include="fonts\oswald.light.ttf" />
+    <Content Include="dynamicPic\Editpoint Ramesh Profile_805768.pdf" />
+    <Content Include=".editorconfig" />
+    <EntityDeploy Include="Entities\HrithvikaEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HrithvikaEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entities\HrithvikaEntity.edmx.diagram">
+      <DependentUpon>HrithvikaEntity.edmx</DependentUpon>
+    </Content>
+    <Content Include="Images\policycopy.pdf" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\istandforthenation.org - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.dataTables.rowReordering.js" />
+    <Content Include="Scripts\Jquery.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\sweet-alert.js" />
+    <Content Include="sitemap.xml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\People\Create.cshtml" />
+    <Content Include="Views\Home\Events.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\ListofSubscribers.cshtml" />
+    <Content Include="Views\Admin\EventsList.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Admin\AddGallery.cshtml" />
+    <Content Include="Views\Home\organizers.cshtml" />
+    <Content Include="Views\Admin\AddVideoGallery.cshtml" />
+    <Content Include="Views\Home\EventDetails.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Admin\AddTeam.cshtml" />
+    <Content Include="Views\Admin\TeamList.cshtml" />
+    <Content Include="Views\Home\GetTeam.cshtml" />
+    <Content Include="Views\Home\EventVideos.cshtml" />
+    <Content Include="Views\Admin\AddMainGallery.cshtml" />
+    <Content Include="Views\Home\gallery.cshtml" />
+    <Content Include="Views\People\NGO.cshtml" />
+    <Content Include="Views\Admin\ListOFNGOS.cshtml" />
+    <Content Include="Views\Admin\ListofMainGallery.cshtml" />
+    <Content Include="Views\Admin\editImage.cshtml" />
+    <Content Include="Views\Admin\Listofvideos.cshtml" />
+    <Content Include="Views\Admin\AddMainVideo.cshtml" />
+    <Content Include="Views\Admin\EditVideos.cshtml" />
+    <Content Include="Views\People\Create_yuvanirman.cshtml" />
+    <Content Include="Views\People\yuvanirman.cshtml" />
+    <Content Include="Views\Admin\yuvanirman.cshtml" />
+    <Content Include="Views\Home\yuvanirmanDetails.cshtml" />
+    <Content Include="Views\Home\Nominations.cshtml" />
+    <Content Include="Views\Home\GetTeamType.cshtml" />
+    <Content Include="Views\Home\Kalamyuvanirman.cshtml" />
+    <Content Include="Views\KalamYuvanirman\Index.cshtml" />
+    <Content Include="Views\Nominations\Index.cshtml" />
+    <Content Include="Views\People\Create_Nominations.cshtml" />
+    <Content Include="Views\Admin\Nominations.cshtml" />
+    <Content Include="Views\Nominations\Nominationdetails.cshtml" />
+    <Content Include="Views\Nominations\Nominationtype.cshtml" />
+    <Content Include="Views\Home\galleryvideo.cshtml" />
+    <Content Include="Views\Home\Donations.cshtml" />
+    <Content Include="Views\Donations\Index.cshtml" />
+    <Content Include="Views\Admin\AddTeamEdit.cshtml" />
+    <Content Include="Views\Admin\Donationlist.cshtml" />
+    <Content Include="Views\Home\gallerytype.cshtml" />
+    <Content Include="Views\Home\galleryvideotype.cshtml" />
+    <Content Include="Views\Admin\preyava.cshtml" />
+    <Content Include="Views\KalamYuvanirman\Create.cshtml" />
+    <Content Include="Views\Publicvoice\Create.cshtml" />
+    <Content Include="Views\Admin\publicvoice.cshtml" />
+    <Content Include="Views\Publicvoice\Index.cshtml" />
+    <Content Include="Views\Donations\NRI.cshtml" />
+    <Content Include="Views\Donations\paymentFailure.cshtml" />
+    <Content Include="Views\Donations\payments.cshtml" />
+    <Content Include="Views\Donations\payment.cshtml" />
+    <Content Include="Views\Donations\failure.cshtml" />
+    <Content Include="Site.Master" />
+    <Content Include="Views\Venue\Create.cshtml" />
+    <Content Include="Views\Venue\Index.cshtml" />
+    <Content Include="Views\Home\Landingpage.cshtml" />
+    <Content Include="Views\Home\pulwama.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="videos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51916</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51916/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

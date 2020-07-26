@@ -1,0 +1,84 @@
+﻿@model hrithvika.Models.Custom_Nomination
+
+@{
+    ViewBag.Title = "Nominationdetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .bgdiv h5 {
+        font-family: 'customfontbold';
+        opacity: 0.7
+    }
+
+    body {
+        background: #f7f7f7
+    }
+
+    .right {
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" src="~/Images/yuvanirman.jpg" />
+
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+            HOW EVER WE ARE
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />`
+
+            <br />
+
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("Enroll", "Create", "People")</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="background_white">
+    <div class="container">
+        <br />
+        <br />
+        <h1 style="text-transform:capitalize !important">@Model.title</h1>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-6" style="border-right:1px solid rgba(128, 128, 128, 0.35)">
+                <iframe width="100%" height="100%" src=@Model.video allowfullscreen="allowfullscreen"
+                        mozallowfullscreen="mozallowfullscreen"
+                        msallowfullscreen="msallowfullscreen"
+                        oallowfullscreen="oallowfullscreen"
+                        webkitallowfullscreen="webkitallowfullscreen"></iframe>
+
+                <br />
+                <br />
+            </div>
+            <div class="col-md-6 text-left">
+                <h6><b>Name :</b> @Model.NAME</h6>
+                <br />
+
+                <h6><b>Description:</b></h6> @Model.Description
+                <br /><br />
+                
+            </div>
+
+        </div>
+
+    </div>
+</div>

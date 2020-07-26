@@ -1,0 +1,114 @@
+﻿@model IEnumerable<hrithvika.Models.customNGO>
+
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" style="filter:grayscale(100%)" src="~/Images/events.jpg" />
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+           HOW EVER WE ARE
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />
+           
+            <br />
+             
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("ENROLL", "Create", "People", null)</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid dv">
+    <h1>List of NGO's</h1>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.orgname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.orgemail)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.createdon)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.orgphone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.orglogo)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.presidentname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.presedentphone)
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.secretaryname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.secretaryphone)
+                    </th>*@
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.orgname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.orgemail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.createdon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.orgphone)
+                    </td>
+                    <td>
+                        <img src="@item.orglogo" width="100" alt="@item.orgname" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.presidentname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.presedentphone)
+                    </td>
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.secretaryname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.secretaryphone)
+        </td>*@
+                    <td>
+                        @Html.ActionLink("Edit", "EditNGOS", new { id = item.id }, new { @class = "btn btn-danger" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "NGoDelete", new { id = item.id }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,152 @@
+﻿@model IEnumerable<hrithvika.Models.Custom_Events>
+@{
+    ViewBag.Title = "Events";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .bgdiv h5 {
+        font-family: 'customfontbold';
+        opacity: 0.7
+    }
+
+    body {
+        background: #f7f7f7
+    }
+
+    .right {
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" src="~/Images/slide1.jpg" />
+
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+            HOW EVER WE ARE
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />
+            
+            <br />
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("Enroll", "Create", "People")</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <br />
+    <h1 style="text-align:left!important">Events</h1>
+    <br />
+    <div class="row">
+        <div class="col-md-8">
+            @foreach (var item in Model)
+            {   
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="@item.image_url" width="100%" alt="Alternate Text" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <br />
+                        <label class="dvtitlecard">@item.title</label>
+                        <br />
+                        <p>@item.description</p>
+                        <br />
+                        @Html.ActionLink("Find Out more >>", "EventDetails", new { eventID = item.id }, new { @class = "btn btn-success" })
+                        <br />
+                        <br /> <br />
+                        <br />
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-md-4" id="left">
+            @using (Html.BeginForm("CreateJson", "People", "post"))
+            {
+                <div class="background_white bgdiv" id="sidebar">
+                    <br />
+                    <h5 class="text-center">SHOW YOUR INTREST</h5> <hr />
+                    <div class="padding_small">
+                        <div class="row">
+                            <div class="col-md-12">
+                                @if (@ViewBag.message != null)
+                                {
+                                    <label class="lblsuc text-center">@ViewBag.message</label>
+                                }
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="editor-field">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Name" required />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12 textbox_margin">
+                                <div class="editor-field">
+                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone" required />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="editor-field">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="editor-field">
+                                    <input type="text" name="state" placeholder="State" class="form-control" id="state" required />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12 textbox_margin">
+                                <div class="editor-field">
+                                    <input type="text" name="country" placeholder="Country" class="form-control" id="country" required />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-success btn-lg" style="width: 100%" value="Join the Team" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

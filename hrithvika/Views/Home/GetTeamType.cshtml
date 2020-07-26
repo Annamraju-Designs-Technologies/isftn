@@ -1,0 +1,184 @@
+﻿@model IEnumerable<hrithvika.Models.custom_Team>
+
+@{
+    ViewBag.Title = "GetTeamType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" src="~/Images/indian-army-message.jpg" />
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+            FOR OUR BRAVE HEARTS
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />
+
+            <br />
+
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("Enroll", "Create", "People")</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <h1 class="text-cente"><a class="team_ad" href="/Home/GetTeam/">Team</a></h1>
+            <br />
+            <div class="col-md-12 text-center">
+
+                @Html.ActionLink("Sponsor", "GetTeamType", "Home", new { type = "Sponsor" }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Support", "GetTeamType", "Home", new { type = "Support" }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("NGO", "GetTeamType", "Home", new { type = "NGO" }, new { @class = "btn btn-primary" })
+                <br />        <br /> <br />
+            </div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    if (item.title == "Annamraju Designs and Technologies")
+                    {
+                        <div class="col-md-2">
+                            <div class="text-center">
+                                <a target="_blank" href="@item.link">
+                                    <div style="min-height:100px!important">
+                                        <img src="@item.img_url" width="60%" title="@item.title" alt="@item.title" />
+                                    </div>
+                                    <br />
+                                    <br />
+
+                                </a>
+                            </div>
+                            <br />
+                            <br />
+                        </div>
+                    }
+                    else if (item.title == "TENX Branding")
+                    {
+                        <div class="col-md-2">
+                            <div class="text-center">
+                                <a target="_blank" href="@item.link">
+                                    <div style="min-height:100px!important">
+                                        <img src="@item.img_url" width="70%" title="@item.title" alt="@item.title" />
+                                    </div>
+                                    <br />
+                                    <br />
+
+                                </a>
+                            </div>
+                            <br />
+                            <br />
+                        </div>
+                    }
+                }
+                @foreach (var item in Model)
+                {
+                    if (item.title != "Annamraju Designs and Technologies" && item.title != "TENX Branding")
+                    {
+                        <div class="col-md-2">
+                            <div class="text-center">
+                                <a target="_blank" href="@item.link">
+                                    <div style="min-height:100px!important">
+                                        <img src="@item.img_url" width="70%" title="@item.title" alt="@item.title" />
+                                    </div>
+                                    <br />
+                                    <br />
+                                </a>
+
+                            </div>
+                            <br />
+                            <br />
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        @*<div class="col-md-4">
+                <br />
+                <br />
+                <br />
+                @using (Html.BeginForm("CreateJsonTeam", "People", "post"))
+                {
+                    <div class="background_white bgdiv">
+                        <br />
+                        <h5 class="text-center">SHOW YOUR INTREST</h5> <hr />
+                        <div class="padding_small">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @if (@ViewBag.message != null)
+                                    {
+                                        <label class="lblsuc text-center">@ViewBag.message</label>
+                                    }
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="editor-field">
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="name" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12 textbox_margin">
+                                    <div class="editor-field">
+                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="phone" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="editor-field">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="email" />
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="editor-field">
+                                        <input type="text" name="state" placeholder="state" class="form-control" id="state" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12 textbox_margin">
+                                    <div class="editor-field">
+                                        <input type="text" name="country" placeholder="country" class="form-control" id="country" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-success" style="width: 100%" value="Join the Team" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>*@
+    </div>
+</div>
+<br />
+<br />

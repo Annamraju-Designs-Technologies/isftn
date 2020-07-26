@@ -1,0 +1,90 @@
+﻿@model hrithvika.Models.custom_Gallery
+<style>
+    .dv {
+        min-height: 400px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" style="filter:grayscale(100%)" src="~/Images/events.jpg" />
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+            FOR OUR BRAVE HEARTS
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />
+
+            <br />
+
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("ENROLL", "Create", "People", null)</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid dv">
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Add Images for Gallery</h2>
+            @using (Html.BeginForm("AddMainGallery", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal text-left">
+
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.files, "", new { @type = "file", @multiple = "multiple" })
+
+                            <br /> <br />
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control", @placeholder = "Image Title " } })
+                                @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+                            </div>
+
+
+                            <br /> <br />
+                                   <div class="col-md-6">
+                                       @Html.DropDownList("category", (IEnumerable<SelectListItem>)ViewData["Dbtype"], "-- Select Category  --", new { required = true, @class = "form-control", @id = "Dbtype" })
+                                       @Html.ValidationMessageFor(model => model.category)
+                                   </div>
+
+
+                            <br /> <br />
+                            @Html.CheckBoxFor(model => model.isimportant) <label>* check for images to show in home page.</label>
+                            <br /> <br />
+                            <br />
+                            <input type="submit" class="btn btn-success" style="width: 200px; height: 40px" value="Save" />
+                            @Html.ActionLink("Cancel", "Index", "Admin", null, new { @class = "btn btn-danger" })
+
+                        </div>
+                    </div>
+
+
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
+        </div>
+    </div>
+</div>

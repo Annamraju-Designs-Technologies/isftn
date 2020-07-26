@@ -1,0 +1,404 @@
+﻿
+@font-face {
+    font-family: customfont;
+    src: url('../fonts/Lato-Regular.ttf');
+}
+
+
+@font-face {
+    font-family: menufont;
+    src: url('../fonts/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: customfontbold;
+    src: url('../fonts/Lora-Regular.ttf');
+}
+
+.caption {
+    width: 100%;
+    left: 0;
+    margin-top: 11% !important;
+    background: #fcfad1;
+    text-align: center;
+    padding: 20px 10px 20px 10px !important;
+    border-bottom: 0.3px solid rgba(255, 76, 0,0.9)
+}
+
+.padding_circle {
+    height: 100px
+}
+
+.telegram_dv {
+    font-size: 20px !important;
+    float: left;
+    left: 0 !important;
+    top: 6% !important;
+    color: #fff !important;
+    margin-top: 15% !important;
+    background: rgba(255, 76, 0,0.9);
+    text-align: center;
+    position: absolute;
+    padding: 50px 10px 50px 10px !important;
+    font-family: customfontbold !important
+}
+
+    .telegram_dv a {
+        color: #fff !important
+    }
+
+.telegram_dv_normal {
+    font-size: 20px !important;
+    float: left;
+    left: 0 !important;
+    top: 4% !important;
+    color: #fff !important;
+    margin-top: 10% !important;
+    background: rgba(255, 76, 0,0.9);
+    text-align: center;
+    position: absolute;
+    padding: 50px 10px 50px 10px !important;
+    font-family: customfontbold !important
+}
+
+    .telegram_dv_normal a {
+        color: #fff !important
+    }
+
+.h2 {
+    color: black;
+}
+
+.show-mobile {
+    display: none !important;
+}
+
+.padding-left {
+    padding-top: 100px;
+}
+
+.insidecontainer {
+    padding: 100px;
+}
+
+.polaroid-images a {
+    background: white;
+    display: inline;
+    float: left;
+    margin: 0 15px 30px;
+    padding: 10px 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,.3);
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    transition: all .15s linear;
+    z-index: 0;
+    position: relative;
+}
+
+    .polaroid-images a:after {
+        color: #333;
+        font-size: 20px;
+        content: attr(title);
+        position: relative;
+        top: 15px;
+    }
+
+.row_highlight {
+    background: rgba(255,255,255,0.8);
+    color: #111 !important;
+    font-family: customfont !important;
+    padding: 25px;
+    position: absolute;
+    width: 100%;
+    margin-top: -85px;
+    text-align: center;
+}
+
+    .row_highlight a {
+        color: black !important;
+        font-family: customfontbold !important;
+        font-size: 25px;
+        text-transform: uppercase
+    }
+
+.polaroid-images img {
+    display: block;
+    width: inherit;
+}
+
+.polaroid-images a:nth-child(2n) {
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    transform: rotate(4deg);
+}
+
+.polaroid-images a:nth-child(3n) {
+    -webkit-transform: rotate(-24deg);
+    -moz-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+}
+
+.polaroid-images a:nth-child(4n) {
+    -webkit-transform: rotate(14deg);
+    -moz-transform: rotate(14deg);
+    transform: rotate(14deg);
+}
+
+.polaroid-images a:nth-child(5n) {
+    -webkit-transform: rotate(-18deg);
+    -moz-transform: rotate(-18deg);
+    transform: rotate(-18deg);
+}
+
+.polaroid-images a:hover {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+    z-index: 10;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0 10px 20px rgba(0,0,0,.7);
+    box-shadow: 0 10px 20px rgba(0,0,0,.7);
+}
+
+
+.nopointer {
+    pointer-events: none !important
+}
+
+.nopadding img {
+    -webkit-animation: zoom 20s;
+    animation: zoom 20s;
+    min-height: 190px
+}
+
+.custompadding {
+    padding: 70px;
+}
+
+@media only screen and (max-width: 724px) {
+    .custompadding {
+        padding: 0px;
+    }
+
+    .telegram_dv {
+        font-size: 20px !important;
+        float: left;
+        width: 100%;
+        left: 0 !important;
+        top: 0% !important;
+        color: #fff !important;
+        margin-top: 0% !important;
+        background: rgba(242, 103, 34, 0.9);
+        text-align: center;
+        position: relative;
+        padding: 50px 10px 50px 10px !important;
+        font-family: customfontbold !important;
+    }
+
+        .telegram_dv a {
+            color: #fff !important
+        }
+
+    .telegram_dv_normal {
+        font-size: 20px !important;
+        float: left;
+        left: 0 !important;
+        width: 100%;
+        color: #fff !important;
+        margin-top: 0% !important;
+        background: rgba(255, 76, 0,0.9);
+        text-align: center;
+        position: relative;
+        padding: 50px 10px 50px 10px !important;
+        font-family: customfontbold !important
+    }
+
+        .telegram_dv_normal a {
+            color: #fff !important
+        }
+
+    .padding_circle {
+        height: 10px
+    }
+
+    .insidecontainer {
+        padding: 10px;
+    }
+}
+
+.no-js #loader {
+    display: none;
+}
+
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../Images/india.gif) center no-repeat #fff;
+}
+
+.countdown {
+    width: 720px;
+    margin: 0 auto;
+}
+
+.countdown .bloc-time {
+    float: left;
+    margin-right: 45px;
+    text-align: center;
+}
+
+    .countdown .bloc-time:last-child {
+        margin-right: 0;
+    }
+
+.countdown .count-title {
+    display: block;
+    margin-bottom: 15px;
+    font: normal 0.94em "Lato";
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+.countdown .figure {
+    position: relative;
+    float: left;
+    height: 110px;
+    width: 100px;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+    -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+    .countdown .figure:last-child {
+        margin-right: 0;
+    }
+
+    .countdown .figure > span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font: normal 5.94em/107px "Lato";
+        font-weight: 700;
+        color: #de4848;
+    }
+
+    .countdown .figure .top:after, .countdown .figure .bottom-back:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .countdown .figure .top {
+        z-index: 3;
+        background-color: #f7f7f7;
+        transform-origin: 50% 100%;
+        -webkit-transform-origin: 50% 100%;
+        -moz-border-radius-topleft: 10px;
+        -webkit-border-top-left-radius: 10px;
+        border-top-left-radius: 10px;
+        -moz-border-radius-topright: 10px;
+        -webkit-border-top-right-radius: 10px;
+        border-top-right-radius: 10px;
+        -moz-transform: perspective(200px);
+        -ms-transform: perspective(200px);
+        -webkit-transform: perspective(200px);
+        transform: perspective(200px);
+    }
+
+    .countdown .figure .bottom {
+        z-index: 1;
+    }
+
+        .countdown .figure .bottom:before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+    .countdown .figure .bottom-back {
+        z-index: 2;
+        top: 0;
+        height: 50%;
+        overflow: hidden;
+        background-color: #f7f7f7;
+        -moz-border-radius-topleft: 10px;
+        -webkit-border-top-left-radius: 10px;
+        border-top-left-radius: 10px;
+        -moz-border-radius-topright: 10px;
+        -webkit-border-top-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+        .countdown .figure .bottom-back span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+    .countdown .figure .top, .countdown .figure .top-back {
+        height: 50%;
+        overflow: hidden;
+        -moz-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .countdown .figure .top-back {
+        z-index: 4;
+        bottom: 0;
+        background-color: #fff;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -moz-transform: perspective(200px) rotateX(180deg);
+        -ms-transform: perspective(200px) rotateX(180deg);
+        -webkit-transform: perspective(200px) rotateX(180deg);
+        transform: perspective(200px) rotateX(180deg);
+        -moz-border-radius-bottomleft: 10px;
+        -webkit-border-bottom-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        -moz-border-radius-bottomright: 10px;
+        -webkit-border-bottom-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+        .countdown .figure .top-back span {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }

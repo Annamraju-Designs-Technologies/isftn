@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ph16787236639_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Hrithvik_NGO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orgname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="orgemail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="createdon" Type="DateTime" Nullable="false" />
+    <Property Name="orgphone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="orglogo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="orgdocuments" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="orgaddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="presidentname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="presedentphone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="secretaryname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="secretaryphone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="presidentemail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="secretaryemail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Hrithvik_yuvanirman">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="createdon" Type="DateTime" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="organization" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="about" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="awards" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="orglogo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="video1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="projectimages" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="projectimages1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="projectimages2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="newsarticle1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="isactive" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HRTVIK_events">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="image_url" Type="String" MaxLength="140" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Createdon" Type="DateTime" />
+    <Property Name="createdby" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HRTVIK_gallery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eventid" Type="Int32" Nullable="false" />
+    <Property Name="image_url" Type="String" MaxLength="140" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Createdon" Type="DateTime" />
+    <Property Name="createdby" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="eventtype" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HRTVIK_OGalery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="createdon" Type="DateTime" />
+    <Property Name="TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isimportant" Type="Boolean" />
+    <Property Name="rank" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HRTVIK_OurTeam">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="img_url" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="createdon" Type="DateTime" Nullable="false" />
+    <Property Name="link" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="320" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Createdon" Type="DateTime" />
+    <Property Name="isdeleted" Type="Boolean" />
+    <Property Name="isactive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="ph16787236639_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admins" EntityType="Self.admin" />
+    <EntitySet Name="Hrithvik_NGO" EntityType="Self.Hrithvik_NGO" />
+    <EntitySet Name="Hrithvik_yuvanirman" EntityType="Self.Hrithvik_yuvanirman" />
+    <EntitySet Name="HRTVIK_events" EntityType="Self.HRTVIK_events" />
+    <EntitySet Name="HRTVIK_gallery" EntityType="Self.HRTVIK_gallery" />
+    <EntitySet Name="HRTVIK_OGalery" EntityType="Self.HRTVIK_OGalery" />
+    <EntitySet Name="HRTVIK_OurTeam" EntityType="Self.HRTVIK_OurTeam" />
+    <EntitySet Name="People" EntityType="Self.Person" />
+    <EntitySet Name="states" EntityType="Self.state" />
+  </EntityContainer>
+</Schema>

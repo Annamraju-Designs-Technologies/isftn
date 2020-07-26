@@ -1,0 +1,81 @@
+﻿@model hrithvika.Models.payment
+
+@{
+    ViewBag.Title = "payment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .hid {
+        display: none !important;
+    }
+
+    .btn {
+        color: #000
+    }
+
+    body {
+        background: url('../Images/organizers_banner.jpg')no-repeat !important;
+        background-size: cover !important;
+        background-attachment: fixed !important;
+        letter-spacing: 0px !important
+    }
+
+    input {
+        background: #ebebeb !important
+    }
+
+        input:focus {
+            background: #fff !important
+        }
+
+    .field-validation-error {
+        color: #f00
+    }
+</style>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="container" style="text-align:center" id="form">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 card">
+            <br />
+            <h2>Payment Confirmation</h2>
+            <hr />
+          
+            <div class="row">
+                <div class="col-md-4 col-4">
+                    Name
+                </div>
+                <div class="col-md-4 col-8">
+                    <label id="lblname">@Model.NAME</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-4">
+                    Email
+                </div>
+                <div class="col-md-4 col-8">
+                    <label id="lblemail">@Model.email</label>
+                </div>
+            </div>
+           <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-6">
+                    <br />
+                    <div class='pm-button'><a href='https://www.payumoney.com/paybypayumoney/#/0F3896C702C301FCECD8FA6AC1CECF5E'><img src='https://www.payumoney.com/media/images/payby_payumoney/new_buttons/21.png' /></a></div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />

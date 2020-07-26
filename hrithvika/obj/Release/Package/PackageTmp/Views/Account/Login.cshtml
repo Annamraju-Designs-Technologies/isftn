@@ -1,0 +1,109 @@
+﻿@model hrithvika.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" style="filter:grayscale(100%)" src="~/Images/events.jpg" />
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+           FOR OUR BRAVE HEARTS
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />
+           
+            <br />
+             
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("ENROLL", "Create", "People", null)</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid padding">
+    <div class="row">
+        <div class="col-md-6" data-aos="fade-down" style="padding: 0px">
+            <div>
+                <br />
+                <img width="100%" src="~/Images/ifsn.png" />
+            </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-right">
+            <br />
+            <br />
+            <h1>Login</h1>
+            <hr />
+            <br />
+            @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+            {
+                <div class="row">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="editor-label">
+                            <label class="fontcolor">Username*</label>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "txtbx" })
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "errmsg" })
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="editor-label">
+                            <label class="fontcolor">Password*</label>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+
+                        @Html.PasswordFor(m => m.Password, new { @class = "txtbx" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "errmsg" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-8">
+
+                        <br />
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-7">
+                        <input type="submit" class="buttoncol btnlogin" value="Log in" />
+                        <br />
+                        <br />
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "errmsg" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

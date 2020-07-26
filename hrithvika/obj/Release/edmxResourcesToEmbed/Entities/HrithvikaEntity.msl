@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ph16787236639_ModelStoreContainer" CdmEntityContainer="ph16787236639_Entities">
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="ph16787236639_Model.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="ph16787236639_Model.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="countries">
+      <EntityTypeMapping TypeName="ph16787236639_Model.country">
+        <MappingFragment StoreEntitySet="country">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donations">
+      <EntityTypeMapping TypeName="ph16787236639_Model.Donation">
+        <MappingFragment StoreEntitySet="Donation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hrithvik_NGO">
+      <EntityTypeMapping TypeName="ph16787236639_Model.Hrithvik_NGO">
+        <MappingFragment StoreEntitySet="Hrithvik_NGO">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orgname" ColumnName="orgname" />
+          <ScalarProperty Name="orgemail" ColumnName="orgemail" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="orgphone" ColumnName="orgphone" />
+          <ScalarProperty Name="orglogo" ColumnName="orglogo" />
+          <ScalarProperty Name="orgdocuments" ColumnName="orgdocuments" />
+          <ScalarProperty Name="orgaddress" ColumnName="orgaddress" />
+          <ScalarProperty Name="presidentname" ColumnName="presidentname" />
+          <ScalarProperty Name="presedentphone" ColumnName="presedentphone" />
+          <ScalarProperty Name="secretaryname" ColumnName="secretaryname" />
+          <ScalarProperty Name="secretaryphone" ColumnName="secretaryphone" />
+          <ScalarProperty Name="presidentemail" ColumnName="presidentemail" />
+          <ScalarProperty Name="secretaryemail" ColumnName="secretaryemail" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="teamtype" ColumnName="teamtype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hrithvik_preyuvanirman">
+      <EntityTypeMapping TypeName="ph16787236639_Model.Hrithvik_preyuvanirman">
+        <MappingFragment StoreEntitySet="Hrithvik_preyuvanirman">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="Father_name" ColumnName="Father_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="institution_name" ColumnName="institution_name" />
+          <ScalarProperty Name="institution_address" ColumnName="institution_address" />
+          <ScalarProperty Name="project_title" ColumnName="project_title" />
+          <ScalarProperty Name="project_description" ColumnName="project_description" />
+          <ScalarProperty Name="group_mumbers" ColumnName="group_mumbers" />
+          <ScalarProperty Name="class_or_course" ColumnName="class_or_course" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="Date_of_birth" ColumnName="Date_of_birth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hrithvik_yuvanirman">
+      <EntityTypeMapping TypeName="ph16787236639_Model.Hrithvik_yuvanirman">
+        <MappingFragment StoreEntitySet="Hrithvik_yuvanirman">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="organization" ColumnName="organization" />
+          <ScalarProperty Name="about" ColumnName="about" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="awards" ColumnName="awards" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="orglogo" ColumnName="orglogo" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="video1" ColumnName="video1" />
+          <ScalarProperty Name="projectimages" ColumnName="projectimages" />
+          <ScalarProperty Name="projectimages1" ColumnName="projectimages1" />
+          <ScalarProperty Name="projectimages2" ColumnName="projectimages2" />
+          <ScalarProperty Name="newsarticle1" ColumnName="newsarticle1" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HRTVIK_events">
+      <EntityTypeMapping TypeName="ph16787236639_Model.HRTVIK_events">
+        <MappingFragment StoreEntitySet="HRTVIK_events">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="image_url" ColumnName="image_url" />
+          <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HRTVIK_gallery">
+      <EntityTypeMapping TypeName="ph16787236639_Model.HRTVIK_gallery">
+        <MappingFragment StoreEntitySet="HRTVIK_gallery">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="eventid" ColumnName="eventid" />
+          <ScalarProperty Name="image_url" ColumnName="image_url" />
+          <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="eventtype" ColumnName="eventtype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HRTVIK_OGalery">
+      <EntityTypeMapping TypeName="ph16787236639_Model.HRTVIK_OGalery">
+        <MappingFragment StoreEntitySet="HRTVIK_OGalery">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="isimportant" ColumnName="isimportant" />
+          <ScalarProperty Name="rank" ColumnName="rank" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="category" ColumnName="category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HRTVIK_OurTeam">
+      <EntityTypeMapping TypeName="ph16787236639_Model.HRTVIK_OurTeam">
+        <MappingFragment StoreEntitySet="HRTVIK_OurTeam">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nomination_type">
+      <EntityTypeMapping TypeName="ph16787236639_Model.Nomination_type">
+        <MappingFragment StoreEntitySet="Nomination_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nominations">
+      <EntityTypeMapping TypeName="ph16787236639_Model.Nomination">
+        <MappingFragment StoreEntitySet="Nominations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="display_image" ColumnName="display_image" />
+          <ScalarProperty Name="video" ColumnName="video" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="category" ColumnName="category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ogalerytypes">
+      <EntityTypeMapping TypeName="ph16787236639_Model.Ogalerytype">
+        <MappingFragment StoreEntitySet="Ogalerytype">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="ph16787236639_Model.Person">
+        <MappingFragment StoreEntitySet="People">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Createdon" ColumnName="Createdon" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="states">
+      <EntityTypeMapping TypeName="ph16787236639_Model.state">
+        <MappingFragment StoreEntitySet="states">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Team_type">
+      <EntityTypeMapping TypeName="ph16787236639_Model.Team_type">
+        <MappingFragment StoreEntitySet="Team_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="publicvoices">
+      <EntityTypeMapping TypeName="ph16787236639_Model.publicvoice">
+        <MappingFragment StoreEntitySet="publicvoice">
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="video" ColumnName="video" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="venues">
+      <EntityTypeMapping TypeName="ph16787236639_Model.venue">
+        <MappingFragment StoreEntitySet="venue">
+          <ScalarProperty Name="fblink" ColumnName="fblink" />
+          <ScalarProperty Name="modifiedon" ColumnName="modifiedon" />
+          <ScalarProperty Name="createdon" ColumnName="createdon" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+          <ScalarProperty Name="isdeletd" ColumnName="isdeletd" />
+          <ScalarProperty Name="venue_area" ColumnName="venue_area" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

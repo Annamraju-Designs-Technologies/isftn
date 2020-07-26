@@ -1,0 +1,145 @@
+﻿@model hrithvika.Models.Custom_Donation
+
+@{
+    ViewBag.Title = "Donations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        background: url('../Images/organizers_banner.jpg')no-repeat !important;
+        background-size: cover !important;
+        background-attachment: fixed !important;
+        letter-spacing: 0px !important
+    }
+
+    input {
+        background: #ebebeb !important
+    }
+
+        input:focus {
+            background: #fff !important
+        }
+</style>
+<br />
+<br />
+<br />
+<br />
+<div class="display_desktop">
+
+</div>
+
+<div class="container" style="background:#fff;text-align:center" id="form">
+    <div class="insidecontainer">
+        <div class="row" style="border:1px solid #ebebeb;text-align:center">
+            <div class="col-md-12">
+                <br /><br />
+                <h5>Knowing the truth is one thing.</h5>
+                <br />
+                <br />
+                <h1 class="text-center">Doing something about it is another… </h1>
+                <br />
+                <br />
+                <p>
+
+                    Our event will only be as strong as our volunteers – folks from around the world who are willing to lend their time and energy to strengthening  our nation. Take the first step in your community by signing up now.
+                </p>
+                <div class="row">
+                    <div class="col-md-12">
+                        @if (@ViewBag.success != null)
+                        {
+                            <label class="lblsuc text-center">@ViewBag.success</label>
+                        }
+                    </div>
+                </div>
+
+                @using (Html.BeginForm("Donations", "Home", "Post"))
+                {
+                    @Html.ValidationSummary(true)
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.NAME, new { @class = "form-control", @placeholder = "Name*" })
+                                @Html.ValidationMessageFor(model => model.NAME)
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.email, new { @class = "form-control", @placeholder = "Email" })
+                                @Html.ValidationMessageFor(model => model.email)
+                                <br />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.phone, new { @class = "form-control", @placeholder = "Phone*" })
+                                @Html.ValidationMessageFor(model => model.phone)  <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="editor-field">
+                                @Html.TextAreaFor(model => model.address, new { @class = "form-control", @placeholder = "Address*" })
+                                @Html.ValidationMessageFor(model => model.address)  <br />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.DropDownList("state", (IEnumerable<SelectListItem>)ViewData["Dbstates"], "-- Select State  --", new { required = true, @class = "form-control", @id = "Dbstates" })
+                                @Html.ValidationMessageFor(model => model.state)
+                            </div>
+                        </div>
+                   
+
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.DropDownList("country", (IEnumerable<SelectListItem>)ViewData["Dbcountry"], "-- Select Country  --", new { required = true, @class = "form-control", @id = "Dbcountry" })
+                                @Html.ValidationMessageFor(model => model.country)
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model=>model.amount,new {@class="form-control", placeholder="Amount"})
+                                @Html.ValidationMessageFor(model => model.amount)
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-left">
+                            <input type="submit" class="btn btn-success loginbtn" style="width: 100%" value="Donate" />  <br /><br />
+                            <i>*Required Fields</i>
+
+                        </div>
+
+                    </div>
+                }
+                <br />
+                <br />
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,202 @@
+﻿@model hrithvika.Models.customNGO
+
+@{
+    ViewBag.Title = "EditNGOS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        background: url('../Images/organizers_banner.jpg')no-repeat !important;
+        background-size: cover !important;
+        background-attachment: fixed !important;
+        letter-spacing: 0px !important
+    }
+
+    input {
+        background: #ebebeb !important
+    }
+
+        input:focus {
+            background: #fff !important
+        }
+
+    textarea {
+        background: #ebebeb !important
+    }
+
+        textarea:focus {
+            background: #fff !important
+        }
+</style>
+<br />
+<br />
+<br />
+<br />
+<div class="display_desktop">
+
+</div>
+<div class="container" style="background:#fff;text-align:center" id="form">
+    <div class="insidecontainer">
+        <div class="row" style="border:1px solid #ebebeb;text-align:center">
+            <div class="col-md-12">
+                <br />
+                <br />
+                <h1 class="text-center">   JOIN THE EVENT</h1>
+                <br />
+                <br />
+                <p>
+                    Be a part of the movement and participate in building a better future for our country! Join this historical campaign and stand up for the values that make our country great. Make a difference.
+                </p>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        @if (@ViewBag.success != null)
+                        {
+                            <label style="background:#cab95c!important" class="lblsuc text-center">@ViewBag.success</label>
+                        }
+                    </div>
+                </div>
+
+                @using (Html.BeginForm("EditNGOS", "Admin", "Post", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.ValidationSummary(true)
+                    @Html.HiddenFor(model => model.id)
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.orgname, new { @class = "form-control", @placeholder = "NGO Name*" })
+                                @Html.ValidationMessageFor(model => model.orgname)
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.orgphone, new { @class = "form-control", @placeholder = "NGO Phone*" })
+                                @Html.ValidationMessageFor(model => model.orgphone)
+                            </div>
+
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.orgemail, new { @class = "form-control", @placeholder = "NGO Email*" })
+                                @Html.ValidationMessageFor(model => model.orgemail)
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.TextAreaFor(model => model.orgaddress, new { @class = "form-control", @placeholder = "Address*" })
+                                @Html.ValidationMessageFor(model => model.orgaddress)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.DropDownList("state", (IEnumerable<SelectListItem>)ViewData["Dbstates"], "-- Select State  --", new { required = true, @class = "form-control", @id = "Dbstates" })
+                                @Html.ValidationMessageFor(model => model.State)
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.presidentname, new { @class = "form-control", @placeholder = "President Name" })
+                                @Html.ValidationMessageFor(model => model.presidentname)
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.presedentphone, new { @class = "form-control", @placeholder = "President Phone" })
+                                @Html.ValidationMessageFor(model => model.presedentphone)
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.presidentemail, new { @class = "form-control", @placeholder = "President Email" })
+                                @Html.ValidationMessageFor(model => model.presidentemail)
+
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.secretaryname, new { @class = "form-control", @placeholder = "Secretary Name" })
+                                @Html.ValidationMessageFor(model => model.secretaryname)
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.secretaryphone, new { @class = "form-control", @placeholder = "Secretary Phone" })
+                                @Html.ValidationMessageFor(model => model.secretaryphone)
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.secretaryemail, new { @class = "form-control", @placeholder = "Secretary Email" })
+                                @Html.ValidationMessageFor(model => model.secretaryemail)
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            file
+                            <label>Upload Logo</label>  <input type="file" id="file" width="200" name="file">
+
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <label>Upload Profile</label>  <input type="file" id="profile" width="200" name="profile">
+
+
+                        </div>
+                    </div><br /><br />
+                    <div class="row">
+                        <div class="col-md-8">
+                        </div>
+                        <div class="col-md-4 text-left">
+                            <input type="submit" class="btn btn-success loginbtn" style="width: 100%" value="Submit" /><br />
+                            <i>*Required Fields</i>
+
+                        </div>
+
+                    </div>
+                }
+                <br />
+                <br />
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<br /><br />
+<br />
+<br /><br />
+<br />
+<br />
