@@ -23,5 +23,6 @@ namespace hrithvika.Entities
         public Nullable<System.DateTime> createdon { get; set; }
         public Nullable<int> isactive { get; set; }
         public Nullable<int> isdeleted { get; set; }
+        public Nullable<int> main_event { get; set; }
     }
 }

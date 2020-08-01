@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="DivyaConnection-Web.config Connection String" description="DivyaConnection Connection String used in web.config by the application to access the database." defaultValue="server=182.50.133.92;port=3306;database=hrithvika;uid=root;password=Hrithvika123#@!" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\AD\ Codes\\ISFTN\ NEW\\hrithvika\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DivyaConnection']/@connectionString" />
-  </parameter>
-  <parameter name="ph16787236639_Entities-Web.config Connection String" description="ph16787236639_Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Entities.HrithvikaEntity.csdl|res://*/Entities.HrithvikaEntity.ssdl|res://*/Entities.HrithvikaEntity.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=182.50.133.92;user id=hrithvika;password=Hrithvika123#@!;database=ph16787236639_&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\AD\ Codes\\ISFTN\ NEW\\hrithvika\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ph16787236639_Entities']/@connectionString" />
-  </parameter>
-</parameters>

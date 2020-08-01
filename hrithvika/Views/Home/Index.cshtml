@@ -8,6 +8,10 @@
         width: 100% !important;
     }
 
+    .modal-title {
+        color: #222 !important
+    }
+
     .dv {
         min-height: 400px;
     }
@@ -56,7 +60,60 @@
         width: 50%;
         font-size: 16px !important;
     }
+
+    .pushbutton { /*dent around button*/
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        color: #0c9c20;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        text-align: center;
+        background: #f7f7f7;
+        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.08);
+    }
+
+        .pushbutton .fas { /*Button itself*/
+            position: absolute;
+            content: '';
+            width: 160px;
+            height: 160px;
+            cursor: pointer;
+            line-height: 160px;
+            vertical-align: middle;
+            left: 18px;
+            top: 19px;
+            border-radius: 50%;
+            font-size: 80px;
+            background-image: -webkit-linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+            background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+            box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+            border-bottom: solid 2px #b5b5b5;
+        }
+
+            .pushbutton .fas:hover {
+                background-image: -webkit-linear-gradient(#efefef 0%, #d6d6d6 100%);
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+                border-bottom: solid 2px #d8d8d8;
+            }
+
+            .pushbutton .fas:active {
+                background-image: -webkit-linear-gradient(#efefef 0%, #d6d6d6 100%);
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+                border-bottom: solid 2px #d8d8d8;
+            }
+
+    input[type="button"] {
+        outline: none;
+    }
+
+    * {
+        outline: none !important;
+    }
 </style>
+
 <link href="~/Content/compiled/flipclock.css" rel="stylesheet" />
 <script src="~/Content/compiled/flipclock.min.js"></script>
 <script src="~/Content/js/customgallery.js"></script>
@@ -81,9 +138,9 @@
         <div class="col-md-12">
             <br />
             <h2 class="text-center" style="color:#fff;text-align:left!important">"SOUND OF GRATITUDE"</h2>
-            <hr style="border:2px solid white;width:70%;text-align:left!important;margin-left:0px" />  <br />
+            <hr style="border:2px solid white;width:70%;text-align:left!important;margin-left:0px;margin-top:0px!important" />  <br />
             <p>
-                Now a days as the world facing an unseen pandemic some people are risking their life to save others life. In keeping view of this I STAND FOR THE NATION came up with a unique campaign to show our small gratitude towards these frontline warriors calling it as “SOUND OF GRATITUDE”. On the coming August 15th 2020 I STAND FOR THE NATION requests every Indian across the globe to chorus our national anthem “JANA GANA MANA” by the time of Red Fort, New Delhi Flag hosting. 
+                Now a days as the world facing an unseen pandemic some people are risking their life to save others life. In keeping view of this I STAND FOR THE NATION came up with a unique campaign to show our small gratitude towards these frontline warriors calling it as “SOUND OF GRATITUDE”. On the coming August 15th 2020 I STAND FOR THE NATION requests every Indian across the globe to chorus our national anthem “JANA GANA MANA” by the time of Red Fort, New Delhi Flag hosting.
             </p> <br /><div style="text-align:right">
                 Supported by :
                 <a href="https://ekam.org/" target="_blank"> <img width="200" src="~/Images/gallery/ekam.png" /></a>
@@ -92,124 +149,20 @@
 
     </div>
 </div>
-<div class="container-fluid padding" style="background:#00031d;color:#fff">
+<div class="container-fluid" id="soundofgratitude" style="background:#00031d;color:#fff;padding-bottom:0px!important">
     <div class="row">
-        <div class="col-md-6">
-            <h2 style="color:#fff" class="h2_mobile">JOIN THE MOMENTUM </h2><p>Be a part of the movement and participate in building a better future for our country! Join this historical event and stand up for the values that make our country great. Make a difference.</p>
-            <div class="row">
-                <div class="col-md-12">
-                    @if (@ViewBag.success != null)
-                    {
-                        <label class="lblsuc text-center">@ViewBag.success</label>
-                    }
-                </div>
-            </div>
-            @using (Html.BeginForm("Createhome", "People", "Post"))
-            {
-                @Html.ValidationSummary(true)
-                <div class="row">
-                    @if (@ViewBag.message != null)
-                    {
-                        <label class="lblsuc text-center">@ViewBag.message</label>
-                    }
-
-                    <div class="col-md-6">
-                        <div class="editor-field">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Name" GroupName="btnjoin" required />
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 textbox_margin">
-                        <div class="editor-field">
-                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone" GroupName="btnjoin" required />
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="editor-field">
-                            <input type="email" name="email" id="email" class="form-control" GroupName="btnjoin" placeholder="Email" />
-                        </div>
-                    </div>
-                </div>
-                <br />
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="editor-field">
-                            @*<input type="text" name="state" placeholder="State" class="form-control" id="State" required />*@
-                            <select name="state" id="State" class="form-control" style="width:100%;height:30px;" placeholder="State" GroupName="btnjoin">
-                                <option>---Select State---</option>
-                                <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                <option value="Assam">Assam</option>
-                                <option value="Bihar">Bihar</option>
-                                <option value="Chhattisgarh">Chhattisgarh</option>
-                                <option value="Goa">Goa</option>
-                                <option value="Gujarat">Gujarat</option>
-                                <option value="Haryana">Haryana</option>
-                                <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                                <option value="Jharkhand">Jharkhand</option>
-                                <option value="Karnataka">Karnataka</option>
-                                <option value="Kerala">Kerala</option>
-                                <option value="Madhya Pradesh">Madhya Pradesh</option>
-                                <option value="Maharashtra">Maharashtra</option>
-                                <option value="Manipur">Manipur</option>
-                                <option value="Meghalaya">Meghalaya</option>
-                                <option value="Mizoram">Mizoram</option>
-                                <option value="Nagaland">Nagaland</option>
-                                <option value="Odisha">Odisha</option>
-                                <option value="Punjab">Punjab</option>
-                                <option value="Rajasthan">Rajasthan</option>
-                                <option value="Sikkim">Sikkim</option>
-                                <option value="Tamil Nadu">Tamil Nadu</option>
-                                <option value="Telangana">Telangana</option>
-                                <option value="Tripura">Tripura</option>
-                                <option value="Uttarakhand">Uttarakhand</option>
-                                <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                <option value="West Bengal">West Bengal</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="col-md-6 textbox_margin">
-                        <div class="editor-field">
-                            @*INSERT INTO country(id,NAME)VALUES('1',''),('2',''),('3',''),('4',''),('5',''),('6',''),('7','')*@
-
-                            @*<input type="text" name="country" placeholder="Country" class="form-control" id="Country" required />*@
-                            <select name="country" id="country" class="form-control" style="width:100%;height:30px;" GroupName="btnjoin" placeholder="country">
-                                <option>---Select country---</option>
-                                <option value="India">India</option>
-                                <option value="USA">USA</option>
-                                <option value="England">England</option>
-                                <option value="Canada">Canada</option>
-                                <option value="Australia">Australia</option>
-                                <option value="Russia">Russia</option>
-                                <option value="Other">Other</option>
-
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-md-4">
-                        <input type="submit" class="btn btn-success loginbtn" style="width: 100%" GroupName="btnjoin" value="Join the Team" />
-                    </div>
-                    <div class="col-md-4">
-
-                    </div>
-
-                </div>
-
-            }
-            <br />
+        <div class="col-md-5 padding text-center">
+          
+            <h1><b>PLEDGE HERE FOR </b> </h1>
+            <img width="100%" src="~/Images/soundofgratitiude.png" /><br />
+            <button type="button" class="pushbutton" data-toggle="modal" data-target="#exampleModal">
+                <i class="fas fa-hand-paper"></i>
+            </button>
+            <br />   <h2 style="color:#fff" class="h2_mobile"> </h2><p>Be a part of the movement and participate in building a better future for our country! Join this historical event and stand up for the values that make our country great. Make a difference.</p>
+           
         </div>
-        <div class="col-md-6">
-            <img width="90%" src="~/Images/hrithvikImages/Banner.jpg" />
+        <div class="col-md-7">
+            <img width="100%" src="~/Images/hrithvikImages/Banner.jpg" />
 
         </div>
     </div>
@@ -437,5 +390,122 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">JOIN THE MOMENTUM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @using (Html.BeginForm("Createhome", "People", "Post"))
+                    {
+                        @Html.ValidationSummary(true)
+                        <div class="row">
+                            @if (@ViewBag.success != null)
+                            {
+                                <label class="lblsuc text-center">@ViewBag.success</label>
+                            }
+                            @if (@ViewBag.message != null)
+                            {
+                                <label class="lblsuc text-center">@ViewBag.message</label>
+                            }
 
+                            <div class="col-md-6">
+                                <div class="editor-field">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Name" GroupName="btnjoin" required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 textbox_margin">
+                                <div class="editor-field">
+                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone" GroupName="btnjoin" required />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="editor-field">
+                                    <input type="email" name="email" id="email" class="form-control" GroupName="btnjoin" placeholder="Email" />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="editor-field">
+                                    @*<input type="text" name="state" placeholder="State" class="form-control" id="State" required />*@
+                                    <select name="state" id="State" class="form-control" style="width:100%;height:30px;" placeholder="State" GroupName="btnjoin">
+                                        <option>---Select State---</option>
+                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                        <option value="Assam">Assam</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Haryana">Haryana</option>
+                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                        <option value="Jharkhand">Jharkhand</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Kerala">Kerala</option>
+                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Manipur">Manipur</option>
+                                        <option value="Meghalaya">Meghalaya</option>
+                                        <option value="Mizoram">Mizoram</option>
+                                        <option value="Nagaland">Nagaland</option>
+                                        <option value="Odisha">Odisha</option>
+                                        <option value="Punjab">Punjab</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                        <option value="Telangana">Telangana</option>
+                                        <option value="Tripura">Tripura</option>
+                                        <option value="Uttarakhand">Uttarakhand</option>
+                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                        <option value="West Bengal">West Bengal</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-6 textbox_margin">
+                                <div class="editor-field">
+                                    @*INSERT INTO country(id,NAME)VALUES('1',''),('2',''),('3',''),('4',''),('5',''),('6',''),('7','')*@
+
+                                    @*<input type="text" name="country" placeholder="Country" class="form-control" id="Country" required />*@
+                                    <select name="country" id="country" class="form-control" style="width:100%;height:30px;" GroupName="btnjoin" placeholder="country">
+                                        <option>---Select country---</option>
+                                        <option value="India">India</option>
+                                        <option value="USA">USA</option>
+                                        <option value="England">England</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Russia">Russia</option>
+                                        <option value="Other">Other</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-success loginbtn" style="width: 100%" GroupName="btnjoin" value="Join the Momentum" />
+                            </div>
+
+                        </div>
+
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>

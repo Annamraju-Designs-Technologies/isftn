@@ -3,74 +3,37 @@
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "ListofSubscribers";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
 }
 <style>
-    .dv {
-        min-height: 400px;
-
-
-    }
-    a {
-        color: #000000!important;
-        text-decoration: none;
-        background-color: transparent;
-    }
+    table tr td {
+    font-size:14px!important}
+    
 </style>
 <link href="~/Content/PagedList.css" rel="stylesheet" />
-<div class="container-fluid">
-    <div class="row">
-        <img width="100%" style="filter:grayscale(100%)" src="~/Images/events.jpg" />
-        <div class="telegram_dv_normal">
-            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
-            <br />
-            HOW EVER WE ARE
-            <br />
-            IS IT TOO MUCH TO ASK FOR ? "
-            <br />
 
-            <br />
-
-        </div>
-    </div>
-    <div class="row d-none d-md-block  row_highlight">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
-                </div>
-                <div class="col-md-4 text-center">
-                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
-                </div>
-                <div class="col-md-4 text-center">
-                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("ENROLL", "Create", "People", null)</i>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="container-fluid dv">
     <br />
     <div class="row">
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            
+        </div>
         <div class="col-md-4">
             <h1>List of Subscibers</h1>
         </div>
-        <div style="color:#0094ff" class="col-md-4 text-center"><h4>Count :@ViewBag.count</h4></div>
+        <div style="color:#0094ff" class="col-md-4 text-center"><h4>
+     @using (Html.BeginForm("Export", "Admin", FormMethod.Post))
+    {
+        <input type="submit" class="btn btn-primary" value="Records: @ViewBag.count Export" />
+    }
+</h4></div>
     </div>
 
     <br />
-    @using (Html.BeginForm("Export", "Admin", FormMethod.Post))
-    {
-        <input type="submit" class="btn btn-primary" value="Export" />
-    }
-    <br />
-
-
     <div class="row">
         <div class="col-md-12 text-center">
 
-            <table class="table">
+            <table class="table tbl">
                 <tr>
                     <th>
                         Name
@@ -132,7 +95,7 @@
                 @Html.PagedListPager(Model, Page_No => Url.Action("ListofSubscribers", "Admin", new { Page_No }, null))
             </div>
         </div>
-       
+
     </div>
 </div>
 

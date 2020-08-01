@@ -21,7 +21,7 @@ namespace hrithvika.Entities
         public string State { get; set; }
         public string Country { get; set; }
         public System.DateTime Createdon { get; set; }
-        public Nullable<bool> isdeleted { get; set; }
+        public bool isdeleted { get; set; }
         public bool isactive { get; set; }
     }
 }

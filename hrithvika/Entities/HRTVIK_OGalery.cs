@@ -16,10 +16,10 @@ namespace hrithvika.Entities
     {
         public int id { get; set; }
         public string path { get; set; }
-        public Nullable<System.DateTime> createdon { get; set; }
+        public System.DateTime createdon { get; set; }
         public string TYPE { get; set; }
         public bool isimportant { get; set; }
-        public Nullable<int> rank { get; set; }
+        public int rank { get; set; }
         public string title { get; set; }
         public string category { get; set; }
     }

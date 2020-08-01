@@ -27,5 +27,6 @@ namespace hrithvika.Entities
         public Nullable<System.DateTime> createdon { get; set; }
         public Nullable<System.DateTime> modifiedon { get; set; }
         public string fblink { get; set; }
+        public Nullable<int> main_event { get; set; }
     }
 }

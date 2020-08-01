@@ -20,5 +20,6 @@ namespace hrithvika.Entities
         public string link { get; set; }
         public string title { get; set; }
         public string type { get; set; }
+        public Nullable<int> main_event { get; set; }
     }
 }

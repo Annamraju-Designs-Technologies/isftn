@@ -20,5 +20,6 @@ namespace hrithvika.Entities
         public Nullable<System.DateTime> Createdon { get; set; }
         public string createdby { get; set; }
         public string eventtype { get; set; }
+        public Nullable<int> main_event { get; set; }
     }
 }

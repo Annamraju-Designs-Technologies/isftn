@@ -16,7 +16,10 @@
     <link href="~/Content/main.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148004797-1"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -126,7 +129,7 @@
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/Venue/Index"><i class="fa fa-map-marker">&nbsp; </i>Venue</a>
+                    <a class="nav-link" href="/Home/Index?#soundofgratitude"><i class="fa fa-hand-paper-o">&nbsp; </i>Pledge</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Home/Events"> <i class="fa fa-calendar"></i> Events</a>
@@ -230,6 +233,8 @@
             </div>
         </div>
     </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <div class="container-fluid footer_panel">
         <div class="row">
             <div class="footer_padding">
@@ -264,10 +269,11 @@
                             <i style="color:#fff!important" class="fa fa-phone"> 9391419984</i>
                             <p style="color:#fff">
                                 <i class="fa fa-map-marker"></i>
-                                Plot no : J-46 , Rd Number 10,
-                                Panchavati Colony , Manikonda,
-                                Hyderabad, RR Dist,
-                                Telangana 500089
+                                I Stand For the Nation<br />
+                                Street no.1 Railway Station Road
+                                Opp: metro pillar, Street No 14,
+                                Padmarao Nagar, Secunderabad,
+                                Telangana 500025.
                             </p>
                             <br />
                             <br />
@@ -281,34 +287,36 @@
         <div class="footer text-center">
             <span style="text-align:center">&copy; IStandfortheNation 2019.</span>   <span>designed and developed by <a target="_blank" style="color: #000!important" href="https://annamrajudesigns.com/">Annamraju Designs & Technologies.</a> Concept by <a style="color: #000!important" href="https://editpoint.in/">EditPoint</a></span>
         </div>
-        <script>
-            $(function () {
-                if ($(window).width() > 1160) {
-                    window.onscroll = function () {
-                        scrollFunction()
-                        function scrollFunction() {
-                            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                                document.getElementById("navbar").style.padding = "30px 10px";
-                                document.getElementById("navbar").style.background = "rgba(0, 3, 29, 0.9)";
-                                document.getElementById("logo").style.width = "120px";
+    </div>
+    <script>
+        $(function () {
+            if ($(window).width() > 1160) {
+                window.onscroll = function () {
+                    scrollFunction()
+                    function scrollFunction() {
+                        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                            document.getElementById("navbar").style.padding = "30px 10px";
+                            document.getElementById("navbar").style.background = "rgba(0, 3, 29, 0.9)";
+                            document.getElementById("logo").style.width = "120px";
 
-                            } else {
-                                document.getElementById("navbar").style.padding = "80px 10px";
-                                document.getElementById("navbar").style.background = "transparent";
-                                document.getElementById("logo").style.width = "200px";
+                        } else {
+                            document.getElementById("navbar").style.padding = "80px 10px";
+                            document.getElementById("navbar").style.background = "transparent";
+                            document.getElementById("logo").style.width = "200px";
 
 
-                            }
                         }
                     }
                 }
-            });
-        </script>
-        <script>
-            $(window).load(function () {
-                // Animate loader off screen
-                $(".se-pre-con").fadeOut("slow");;
-            });
-        </script>
+            }
+        });
+    </script>
+    <script>
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+
 </body>
 </html>
