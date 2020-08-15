@@ -636,6 +636,7 @@
     <Content Include="Images\banner2.jpg" />
     <Content Include="Images\Bharathtodaylive.jpg" />
     <Content Include="Images\br.jpg" />
+    <Content Include="Images\celeb.jpg" />
     <Content Include="Images\certificate.jpg" />
     <Content Include="Images\donation.jpg" />
     <Content Include="Images\gallery\ekam.png" />
@@ -754,6 +755,7 @@
     <Content Include="Images\soundofgratitiude.png" />
     <Content Include="Images\Thawar-Chand-Gehlot_964 %281%29.jpg" />
     <Content Include="Images\Thawar-Chand-Gehlot_964.jpg" />
+    <Content Include="Images\TV5_Telugu.png" />
     <Content Include="Images\venue.jpg" />
     <Content Include="Images\vid.png" />
     <Content Include="Images\yuvanirman.jpg" />
