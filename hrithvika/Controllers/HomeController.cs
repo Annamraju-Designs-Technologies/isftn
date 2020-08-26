@@ -32,7 +32,7 @@ namespace hrithvika.Controllers
                 ce.createdon = item.createdon;
                 ce.isimportant = item.isimportant;
                 ce.TYPE = item.TYPE;
-
+                ce.rank = item.rank;
                 celist.Add(ce);
             }
             return View(celist);

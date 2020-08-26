@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "yuvanirman";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .bgdiv h5 {
+        font-family: 'customfontbold';
+        opacity: 0.7
+    }
+
+    body {
+        background: #f7f7f7
+    }
+
+    .right {
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <img width="100%" src="~/Images/yuvanirman.jpg" />
+
+        <div class="telegram_dv_normal">
+            " <b>1</b>  DAY  &nbsp;<b>1</b> MINUTE
+            <br />
+            HOW EVER WE ARE
+            <br />
+            IS IT TOO MUCH TO ASK FOR ? "
+            <br />
+            
+            <br />
+             
+        </div>
+    </div>
+    <div class="row d-none d-md-block  row_highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-calendar fa-2x"></i> <a href="/Home/Events"> Events</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-users fa-2x"> @Html.ActionLink("NGO's", "NGO", "People")</i>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i style="color:#ff0000" class="fa fa-heart fa-2x"> @Html.ActionLink("Enroll", "Create", "People")</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="background_white">
+    <div class="container">
+        <br />
+        <br />
+        <h1 style="font-family:cardtitle!important" class="text-left">Kalam Yuva Nirman</h1>
+        <br />
+        <p>If you are different from others and have high dreams, join us and make your dreams come true. Never give up on what you really want to do. The person with big dreams or innovative Ideas is more powerful than one with all the facts.  This site makes your ideas available to a large selection of people who are interested in making a difference. A must-see and participation for anyone and everyone.</p>
+
+        <p text-center>Nominations will close by Jan 5th 2020</p>
+
+        <p>Who can participate: Any Indian citizen from any academic background (BPO/MNC, Automobiles, IT, AI, ML, Graduate, Hotel Management, Govt employees, etc)</p>
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+<div class="container-fluid background_about_third">
+    <div class="row">
+        <div class="col-md-6 d-none d-md-block">
+            <br /><br /><br /><br /><br /><br />
+        </div>
+        <div class="col-md-6 text-center" data-aos="fade-up">
+            <br />
+            <br />
+            <h2 class="text-center" style="font-family:cardtitle">"People Dont Like me <br /> because I am different. <br />I dont like them because <br /> they are all same"</h2>
+            <br />
+            @Html.ActionLink("Enroll to Participate", "Create_yuvanirman", "People", null, new { @class = "btn btn-primary loginbtn" })
+            <br />
+            <br />
+            <br />
+        </div>
+
+    </div>
+</div>
+

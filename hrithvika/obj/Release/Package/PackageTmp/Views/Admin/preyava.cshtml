@@ -1,0 +1,67 @@
+﻿@model IEnumerable<hrithvika.Models.Custom_preyuva>
+
+@{
+    ViewBag.Title = "preyuva";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<style>
+    .dv {
+        min-height: 400px;
+    }
+
+    .table a {
+        color: #808080 !important
+    }
+</style>
+
+<div class="container-fluid dv">
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Pre Registration List</h2>
+
+            <table class="table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Phone
+                    </th>
+                    <th>Project Title</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.project_title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.category)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.createdon)
+                        </td>
+
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>0

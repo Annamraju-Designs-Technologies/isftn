@@ -420,3 +420,5 @@ E:\gitrepos\istandforthenation\hrithvika\obj\Release\hrithvika.csproj.CopyComple
 E:\gitrepos\istandforthenation\hrithvika\obj\Release\hrithvika.dll
 E:\gitrepos\istandforthenation\hrithvika\obj\Release\hrithvika.pdb
 E:\gitrepos\istandforthenation\hrithvika\bin\MySql.Data.xml
+E:\gitrepos\istandforthenation\hrithvika\bin\MySql.Data.EntityFramework.dll
+E:\gitrepos\istandforthenation\hrithvika\bin\MySql.Data.EntityFramework.xml

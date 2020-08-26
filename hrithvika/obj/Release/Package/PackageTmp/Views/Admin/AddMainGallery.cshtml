@@ -1,0 +1,56 @@
+﻿@model hrithvika.Models.custom_Gallery
+@{
+    ViewBag.Title = "AddGallery";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<style>
+    .dv {
+        min-height: 400px;
+    }
+</style>
+
+<div class="container-fluid dv">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Add Images for Gallery</h2>
+            @using (Html.BeginForm("AddMainGallery", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            @Html.TextBoxFor(model => model.files, "", new { @type = "file", @multiple = "multiple" })
+
+                        </div>
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control", @placeholder = "Image Title " } })
+                            @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-4">
+                            @Html.DropDownList("category", (IEnumerable<SelectListItem>)ViewData["Dbtype"], "-- Select Category  --", new { required = true, @class = "form-control", @id = "Dbtype" })
+                            @Html.ValidationMessageFor(model => model.category)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <br /> <br />
+                        <div class="col-md-6">
+                            @Html.CheckBoxFor(model => model.isimportant) <label>* check for images to show in home page.</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-success" style="width: 200px; height: 40px" value="Save" />
+                            @Html.ActionLink("Cancel", "Index", "Admin", null, new { @class = "btn btn-danger" })
+
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            }
+          
+        </div>
+    </div>
+</div>

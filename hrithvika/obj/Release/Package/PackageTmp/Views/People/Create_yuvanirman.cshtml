@@ -1,0 +1,195 @@
+﻿@model hrithvika.Models.custom_yuvanirman
+
+@{
+    ViewBag.Title = "Create_yuvanirman";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        background: url('../../Images/yuvanirman.jpg')no-repeat !important;
+        background-size: cover !important;
+        background-attachment: fixed !important;
+        letter-spacing: 0px !important
+    }
+
+    .validcolor {
+        color: #ff0000 !important;
+    }
+
+    input {
+        background: #ebebeb !important
+    }
+
+        input:focus {
+            background: #fff !important
+        }
+
+    textarea {
+        background: #ebebeb !important
+    }
+
+        textarea:focus {
+            background: #fff !important
+        }
+</style>
+<br />
+<br />
+
+<div class="display_desktop">
+
+</div>
+<div class="container" style="background:#fff;text-align:center" id="form">
+    <div class="insidecontainer">
+        <div class="row" style="border:1px solid #ebebeb;text-align:center">
+            <div class="col-md-12">
+                <br />
+                <br />
+                <h1 class="text-center">   Kalam Yuva Nirman</h1>
+                <br />
+                @if (@ViewBag.success != null)
+                {
+                    <label class="validcolor">@ViewBag.success</label>
+                    <h4></h4>
+                }
+                <br />
+                <p>
+                    "People Dont Like me ,because I am different. I dont like them because  they are all same"
+                </p>
+                <br />
+                <br />
+                @using (Html.BeginForm("Create_yuvanirman", "People", "post", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.firstname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Name*" } })
+                            @Html.ValidationMessageFor(model => model.firstname, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.lastname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Title*" } })
+                            @Html.ValidationMessageFor(model => model.lastname, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Phone*" } })
+                            @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.organization, new { htmlAttributes = new { @class = "form-control", @placeholder = "Employer/Organization/College/University*" } })
+                            @Html.ValidationMessageFor(model => model.organization, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+
+
+                            @Html.TextAreaFor(model => model.address, new { @class = "form-control", @placeholder = "Address*" })
+                            @Html.ValidationMessageFor(model => model.address)
+
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Logo / Display Image if any*</label>
+                            <input type="file" id="file" width="200" name="file">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Awards</label>
+                            <input type="file" id="file5" width="200" name="file5">
+                        </div>
+
+                    </div>
+
+
+
+                    <br />
+                    //notformattedcode -- Siva
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.DropDownList("category", (IEnumerable<SelectListItem>)ViewData["Dbcategory"], "-- Select Category  --", new { required = true, @class = "form-control", @id = "Dbcategory" })
+                            @Html.ValidationMessageFor(model => model.category)
+                        </div>
+                        <div class="col-md-6">
+                            @Html.TextAreaFor(model => model.about, new { @class = "form-control", @placeholder = "About Project Description*" }) <i style="color:#808080">*Less than 2000 Characters</i>
+                            @Html.ValidationMessageFor(model => model.about, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+
+
+                            <label>Project images</label><br />
+                            <input type="file" id="file1" width="150" name="file1">
+                            <br />
+                            <input type="file" id="file2" width="150" name="file2">
+                            <br />
+                            <input type="file" id="file3" width="150" name="file3">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Project Video ( Youtube or Vimeo embeded Link)</label><br />
+                            @Html.EditorFor(model => model.video1, new { htmlAttributes = new { @class = "form-control", @placeholder = " Ex- https://www.youtube.com/embed/dWARfPyCg2c" } })
+                            @Html.ValidationMessageFor(model => model.video1, "", new { @class = "text-danger" })
+                            <br />
+                            <label>Article</label>
+                            <input type="file" id="file4" width="200" name="file4">
+                        </div>
+
+
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.DropDownList("state", (IEnumerable<SelectListItem>)ViewData["Dbstates"], "-- Select State  --", new { required = true, @class = "form-control", @id = "Dbstates" })
+                            @Html.ValidationMessageFor(model => model.state)
+                        </div>
+                        <div class="col-md-6">
+                            @Html.DropDownList("country", (IEnumerable<SelectListItem>)ViewData["Dbcountry"], "-- Select Country  --", new { required = true, @class = "form-control", @id = "Dbcountry" })
+                            @Html.ValidationMessageFor(model => model.country)
+                        </div>
+
+
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-8">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="submit" value="Submit" style="width: 100%" class="btn btn-success loginbtn" />
+                            <br />
+                            <i>*Required Fields</i>
+                        </div>
+                    </div>
+
+                }
+
+
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
